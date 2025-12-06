@@ -58,7 +58,7 @@ body {
 .title {
   font-family: "Recursive Sans Casual Static ExtraBlack Itali", "spalla", "Noto Sans KR", sans-serif;
   font-weight: 800;
-  font-size: 5em;
+  font-size: 4em;
 
   display: inline-block;
   animation: wiggly 2.4s infinite ease-in-out;
