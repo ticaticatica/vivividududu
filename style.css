@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+.title {
+  font-family: "spella", sans-serif;
+}
+
+
 /* 배경 + 전체 레이아웃 */
 body {
   min-height: 100vh;

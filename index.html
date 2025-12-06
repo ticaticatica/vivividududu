@@ -8,19 +8,24 @@
   <!-- 외부 CSS 연결 -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Adobe Fonts (Spella) -->
+  <!-- Adobe Fonts (Spella + BC Ludva) -->
   <link rel="stylesheet" href="https://use.typekit.net/urt5vwi.css">
 
   <style>
     body {
       font-family: "spella", "Noto Sans KR", sans-serif;
-      /* 필요하면 전체 가중치도 지정 가능 */
-      /* font-weight: 400; */
     }
 
-    /* 제목이나 특정 영역에 Spella만 쓰고 싶을 때 */
-    .title, .subtitle {
+    /* subtitle은 Spella 유지 */
+    .subtitle {
       font-family: "spella", "Noto Sans KR", sans-serif;
+    }
+
+    /* title만 BC Ludva Bold Slant 적용 */
+    .title {
+      font-family: "bc-ludva-bold-slant", "spella", "Noto Sans KR", sans-serif;
+      font-weight: 700;
+      font-style: oblique;
     }
   </style>
 </head>
@@ -36,8 +41,9 @@
          viddle-viddle.<br> 
         A wiggly world <br><span></span> 
         for wiggly souls.</h1>
-    <p class="body-text">
-    </p>
+
+    <p class="body-text"></p>
+
     <br>
     <div class="footer">
       © 2025 viddlevillage 
