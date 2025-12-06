@@ -6,14 +6,14 @@
 }
 
 .title {
-  font-family: "spella", sans-serif;
+  font-family: "Recursive Sans Casual Static ExtraBlack Italic", sans-serif;
 }
 
 
 /* 배경 + 전체 레이아웃 */
 body {
   min-height: 100vh;
-  font-family: "spella", "Noto Sans KR", sans-serif;
+  font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
   background-color: #ffffff;
   color: #111111;
 
