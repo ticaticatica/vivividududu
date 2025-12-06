@@ -53,9 +53,10 @@ body {
 
 /* 최종 title 스타일 + 애니메이션 */
 .title {
-  font-family: "Recursive Sans Casual Static ExtraBlack Itali", "Noto Sans KR", sans-serif;
-  font-weight: 800;
+  font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
+  font-weight: 900;
   font-size: 4em;
+  font-style: italic;
 
   display: inline-block;
   animation: wiggly 2.4s infinite ease-in-out;
