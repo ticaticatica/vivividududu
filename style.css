@@ -45,3 +45,22 @@ body {
   font-size: 32px;
   line-height: 1.1;
   margin-bottom:
+
+  /* Wiggly animation */
+@keyframes wiggly {
+  0%   { transform: rotate(0deg) translateY(0px); }
+  25%  { transform: rotate(1.4deg) translateY(-2px); }
+  50%  { transform: rotate(-1.4deg) translateY(3px); }
+  75%  { transform: rotate(1deg) translateY(-1px); }
+  100% { transform: rotate(0deg) translateY(0px); }
+}
+
+.title {
+  font-family: "bc-ludva-slant", "spalla", "Noto Sans KR", sans-serif;
+  font-weight: 800;
+  font-size: 3em;
+  font-style: oblique;
+
+  display: inline-block;
+  animation: wiggly 2.4s infinite ease-in-out;
+}
