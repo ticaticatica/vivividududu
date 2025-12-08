@@ -8,9 +8,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  border: 0;
-  border-top: 7px solid #000;
+  height: 7px;       /* border 대신 height로 선 두께를 만들기 */
+  background: #000;
   z-index: 2000;
+}
 }
 
 
@@ -35,6 +36,8 @@ body {
   display: flex;
   flex-direction: column;   /*  핵심! 세로 방향 정렬 */
   align-items: center;      /* 가운데 정렬 optional */
+  margin: 0;   /* ← 이거 반드시 필요! */
+  padding: 0
 }
 
 /* -----------------------------
