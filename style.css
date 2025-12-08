@@ -35,10 +35,11 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 32px 28px;
-  max-width: 640px;
+  max-width: 900px;   /* 카드 가로 폭 늘리기 */
   width: 100%;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(6px); /* Safari 대응 */
+  text-align: left;   /* 내부 전체 왼쪽 정렬 */
 }
 
 /* ================================
@@ -85,7 +86,9 @@ body {
 #spinningTitle {
   display: inline-block;
   cursor: pointer;
-  margin-bottom: 120px;
+  text-align: left;
+  margin-right: auto;
+  margin-bottom: 80px; /*  간격 넉넉하게 */
 }
 
 /* hover → spin */
