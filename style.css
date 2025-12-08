@@ -58,16 +58,6 @@ body {
   align-items: flex-start;
 }
 
-/* -----------------------------
-   TITLE ANIMATION (Wiggly + Spin)
------------------------------- */
-@keyframes wigglyTitle {
-  0%   { transform: rotate(0deg) translateY(0); }
-  25%  { transform: rotate(1.4deg) translateY(-2px); }
-  50%  { transform: rotate(-1.4deg) translateY(3px); }
-  75%  { transform: rotate(1deg) translateY(-1px); }
-  100% { transform: rotate(0deg) translateY(0); }
-}
 
 .title {
   font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
