@@ -119,8 +119,8 @@ body {
 
 @keyframes lineWiggle {
   0%   { transform: rotate(var(--line-tilt)) translateY(0px); }
-  25%  { transform: rotate(calc(var(--line-tilt) + 3deg)) translateY(-35px); }
-  50%  { transform: rotate(calc(var(--line-tilt) - 3deg)) translateY(26px); }
+  25%  { transform: rotate(calc(var(--line-tilt) + 23deg)) translateY(-35px); }
+  50%  { transform: rotate(calc(var(--line-tilt) - 33deg)) translateY(26px); }
   75%  { transform: rotate(calc(var(--line-tilt) + 1.5deg)) translateY(-54px); }
   100% { transform: rotate(var(--line-tilt)) translateY(0px); }
 }
