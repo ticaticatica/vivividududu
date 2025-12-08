@@ -18,9 +18,9 @@
 body {
   min-height: 100vh;
   display: flex;   /* flex 제거 */
-  /*justify-content: center;
+  justify-content: center;
   align-items: center;
-  padding: 20px 20px;*/
+  padding: 20px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
 
@@ -59,7 +59,7 @@ body {
   align-items: flex-start;
  /* gap: 300px;*/
   width: none;
-  margin-top: 200px;
+  margin-top: 400px;
 }
 
 /* -----------------------------
@@ -81,7 +81,7 @@ body {
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
-  margin-top: 300px;
+  margin-top: 400px;
   margin-left: 0;
 }
 
