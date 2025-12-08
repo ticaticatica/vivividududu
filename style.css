@@ -24,14 +24,14 @@ body {
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
 
-.card {
+/*.card {
   background: rgba(255, 255, 255, 0.5);
   padding: 10px;
   max-width: none;
   width: 100%;
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
+  -webkit-backdrop-filter: blur(6px); 
+} */
 
 /* -----------------------------
    TOP TITLE
