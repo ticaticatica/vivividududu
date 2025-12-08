@@ -32,7 +32,7 @@ body {
   position: fixed;
   top: 10px;
   left: 2vw;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 100;
   font-style: italic;
   line-height: 1.0;
@@ -46,24 +46,16 @@ body {
 ---------------------------------------- */
 .title-subtitle-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row nowrap;
   align-items: center;
   gap: 4vh;
   width: 100%;
-  margin-top: 5vh;
   text-align: center;
 }
 
-/* -----------------------------
-   TITLE ANIMATION (Wiggly + Spin)
------------------------------- */
-@keyframes wigglyTitle {
-  0%   { transform: rotate(0deg) translateY(0); }
-  25%  { transform: rotate(1.4deg) translateY(-2px); }
-  50%  { transform: rotate(-1.4deg) translateY(3px); }
-  75%  { transform: rotate(1deg) translateY(-1px); }
-  100% { transform: rotate(0deg) translateY(0); }
-}
+/* ---------------------------------------
+  TITLE 
+---------------------------------------- */
 
 .title {
   font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
@@ -76,8 +68,19 @@ body {
   cursor: pointer;
   text-align: center;
   transition: transform 0.3s ease;
+   margin-top: 30%
 }
 
+/* -----------------------------
+   TITLE ANIMATION (Wiggly + Spin)
+------------------------------ */
+@keyframes wigglyTitle {
+  0%   { transform: rotate(0deg) translateY(0); }
+  25%  { transform: rotate(1.4deg) translateY(-2px); }
+  50%  { transform: rotate(-1.4deg) translateY(3px); }
+  75%  { transform: rotate(1deg) translateY(-1px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
 
 /* Hover spin */
 .title:hover {
@@ -98,7 +101,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
   text-align: right;
-  margin-top: 10%
+  margin-top: 20%
 }
 
 
@@ -139,7 +142,6 @@ body {
   65%  { transform: scale(0.95,1.05); }
   100% { transform: scale(1,1); }
 }
-
 
 /* ---------------------------------------
    FOOTER
