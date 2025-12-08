@@ -27,7 +27,7 @@ body {
 ------------------------------ */
 .top-title {
   position: fixed;
-  top: 5px;
+  top: 10px;
   left: 2vw;
   font-size: 1.1rem;
   font-weight: 100;
