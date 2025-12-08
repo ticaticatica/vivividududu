@@ -19,7 +19,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   padding: 20px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
@@ -55,11 +55,11 @@ body {
 ---------------------------------------- */
 .title-subtitle-wrap {
   left: 2%;
-  /*display: flex;
-  justify-content: space-between;*/
+  display: flex;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 90px;
-  width: 100%;
+  gap: 80px;
+  width: 90%;
   margin-top: 20px;
 }
 
