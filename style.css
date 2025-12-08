@@ -1,11 +1,11 @@
 /* -----------------------------
    RESET
 ------------------------------ */
-/* {
+ {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} */
+} 
 
   hr {
   position: relative;
@@ -24,6 +24,17 @@
   z-index: -1;
   pointer-events: none;
 } 
+
+.fixed-line {
+  position: fixed;
+  top: 60px;       /* 원하는 위치로 조정 */
+  left: 0;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #000;
+  z-index: 1000;   /* 다른 요소 위에 보이도록 */
+}
+
 
 /* -----------------------------
    LAYOUT
@@ -202,3 +213,5 @@ body {
   font-size: 12px;
   pointer-events: none;
 }
+
+
