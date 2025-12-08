@@ -28,8 +28,8 @@
 .fixed-line {
   position: fixed;
   top: 80px;       /* 원하는 위치로 조정 */
-  left: 50%;
-  width: 90%;
+  left: 40%;
+  width: 100%;
   border: 0;
   border-top: 1px solid #000;
   z-index: 1000;   /* 다른 요소 위에 보이도록 */
