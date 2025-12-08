@@ -19,7 +19,7 @@ body {
   min-height: 100vh;
   display: flex;   /* flex 제거 */
   /*justify-content: center;*/
-  align-items: center;
+  /*align-items: center;*/
   padding: 20px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
