@@ -33,8 +33,6 @@ body {
 ---------------------------- */
 .card {
   background-color: rgba(255, 255, 255, 0.9);
-/* border-radius: 16px;
-   border: 1px solid rgba(0, 0, 0, 0.08);*/
   padding: 32px 28px;
   max-width: 640px;
   width: 100%;
@@ -45,41 +43,44 @@ body {
    제목 기본 스타일
 ---------------------------- */
 .title {
-  font-size: 32px;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-/* ----------------------------
-   흔들흔들 title 애니메이션
----------------------------- */
-@keyframes wiggly {
-  0%   { transform: rotate(0deg) translateY(0px); }
-  25%  { transform: rotate(1.4deg) translateY(-2px); }
-  50%  { transform: rotate(-1.4deg) translateY(3px); }
-  75%  { transform: rotate(1deg) translateY(-1px); }
-  100% { transform: rotate(0deg) translateY(0px); }
-}
-
-/* ----------------------------
-   최종 title 스타일 적용
----------------------------- */
-.title {
   font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: 4em;
   font-style: italic;
-
+  line-height: 1.1;
+  margin-bottom: 24px;
   display: inline-block;
-  animation: wiggly 2.4s infinite ease-in-out;
+  /* wiggly 애니메이션은 제거 (transform 충돌 방지) */
+}
+
+/* ----------------------------
+   ✨ 360도 회전 애니메이션 (제목 wrapper)
+---------------------------- */
+#spinningTitle {
+  display: inline-block;
+  animation: spinSlow 6s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 클릭 시 빠르게 회전 */
+.spin-fast {
+  animation: spinFast 0.9s linear infinite !important;
+}
+
+@keyframes spinFast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* ============================================================
-   ✨✨✨ 단어(word) 단위로 흩어지고 흔들리는 애니메이션 ✨✨✨
-   (우리가 새로 만든 기능)
+   ✨✨✨ 단어(word) 단위로 흩어지고 흔들리는 애니메이션
 =============================================================== */
 
-/* 각 단어 기본 스타일 */
 .word {
   display: inline-block;
   position: relative;
@@ -102,13 +103,13 @@ body {
   --shiftX: 6px;
 }
 
-/* 일부 단어는 타이밍도 다르게 → 통째로 안 움직이게 */
+/* 타이밍 차이 ⇒ 전체가 한 덩어리처럼 안 보임 */
 .word:nth-of-type(3n) {
   animation-delay: 0.15s;
 }
 
 .word:nth-of-type(4n) {
-  animation-delay: 0.3s;
+  animation-delay: 0.33s;
 }
 
 /* 몽글몽글 + 흩어진 느낌 애니메이션 */
