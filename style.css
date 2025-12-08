@@ -41,12 +41,6 @@ body {
   -webkit-backdrop-filter: blur(6px);
 }
 
-.divider {
-    border: 0;
-    border-top: 1px solid #000;
-    margin: 20px 0;
-}
-
 
 /* -----------------------------
    TOP TITLE
