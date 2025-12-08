@@ -35,7 +35,7 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 32px 28px;
-  max-width: 800px;   /* 카드 가로 폭 늘리기 */
+  max-width: 700px;   /* 카드 가로 폭 늘리기 */
   width: 100%;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(6px); /* Safari 대응 */
@@ -79,7 +79,7 @@ body {
   font-size: 4em;
   font-style: italic;
   line-height: 1.0;
-  margin-left: 20px;  
+  margin-left: 60px;  
   display: inline-block;
   animation: wigglyTitle 2.4s infinite ease-in-out;
 }
@@ -137,7 +137,7 @@ h1.subtitle {
 .word:nth-child(4n)   { animation-delay: 0.33s; }
 
 @keyframes floatWiggle {
-  0%   { transform: var(--tilt) translate(var(--shiftX), 10); }
+  0%   { transform: var(--tilt) translate(var(--shiftX), 50); }
   25%  { transform: var(--tilt) translate(var(--shiftX), -20px); }
   50%  { transform: var(--tilt) translate(var(--shiftX), 40px); }
   75%  { transform: var(--tilt) translate(var(--shiftX), -20px); }
