@@ -157,29 +157,25 @@ body {
   margin-top: 10%
 }
 
-/* 화면 하단 전체 영상 래퍼 */
+
 .video-wrapper {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 35vh; /* 필요에 따라 20~50vh로 조절 가능 */
+  height: 35vh;
   overflow: hidden;
-  z-index: -1; /* 배경처럼 뒤로 보내기 */
+  z-index: -1;
 }
 
-/* 영상 자체 */
 .video-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  /* idle 상태에서 자연스럽게 움직이도록 */
   animation: videoWiggle 12s ease-in-out infinite;
   transform-origin: center;
 }
 
-/* 자연스러운 움직임 */
 @keyframes videoWiggle {
   0%   { transform: scale(1.02) translate(0, 0); }
   25%  { transform: scale(1.03) translate(-2%, -1%); }
