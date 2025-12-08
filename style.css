@@ -17,7 +17,7 @@
 ------------------------------ */
 body {
   min-height: 100vh;
-  display: flex;   /* flex 제거 */
+  display: block;   /* flex 제거 */
   /*justify-content: center;*/
   /*align-items: center;*/
   padding: 20px 20px;
