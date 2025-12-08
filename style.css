@@ -37,7 +37,7 @@ body {
   flex-direction: column;   /*  핵심! 세로 방향 정렬 */
   align-items: center;      /* 가운데 정렬 optional */
   margin: 0;   /* ← 이거 반드시 필요! */
-  padding: 0
+  padding: 0;
 }
 
 /* -----------------------------
@@ -63,7 +63,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30vh;
+  gap: 100vh;
   width: 100%;
   text-align: center;
 
