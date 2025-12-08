@@ -35,7 +35,7 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 32px 28px;
-  max-width: 900px;   /* 카드 가로 폭 늘리기 */
+  max-width: 800px;   /* 카드 가로 폭 늘리기 */
   width: 100%;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(6px); /* Safari 대응 */
@@ -79,7 +79,7 @@ body {
   font-size: 4em;
   font-style: italic;
   line-height: 1.0;
-  /*margin-left: -20px;  살짝 왼쪽으로 당기기 */
+  margin-left: 20px;  
   display: inline-block;
   animation: wigglyTitle 2.4s infinite ease-in-out;
 }
@@ -89,7 +89,7 @@ body {
   cursor: pointer;
   text-align: left;
   margin-right: auto;
-  margin-bottom: 60px; /*  간격 넉넉하게 */
+  margin-bottom: 20px; /*  간격 넉넉하게 */
 }
 
 /* hover → spin */
