@@ -20,7 +20,7 @@ body {
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* 기존: center → 텍스트 위로 이동 */
+  justify-content: center; /* 기존: center → 텍스트 위로 이동 */
   padding-top: 8vh;
 }
 
