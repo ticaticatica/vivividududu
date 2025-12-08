@@ -26,9 +26,9 @@ body {
 
 .card {
   background: rgba(255, 255, 255, 0.5);
-  padding: 20px;
+  padding: 10px;
   max-width: none;
-  width: 100%;
+  width: none;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -57,7 +57,7 @@ body {
   display: flex;
   justify-content: flex-start;  /* 왼쪽 정렬 */
   align-items: flex-start;
-  gap: 120px;
+  gap: 200px;
   width: none;
   margin-top: 200px;
 }
