@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     text.innerHTML = processed;
   }
+  });
 
   /* ---------------------------------------------------
      TITLE HOVER SPIN
