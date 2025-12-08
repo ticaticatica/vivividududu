@@ -53,7 +53,6 @@ body {
    TITLE + SUBTITLE 가로 배치 컨테이너
 ---------------------------------------- */
 .title-subtitle-wrap {
-  display: block;
   justify-content: left;
   align-items: left;
   gap: 300px;
@@ -73,7 +72,7 @@ body {
 }
 
 .title {
-  font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
+  font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: 4em;
   font-style: italic;
@@ -84,7 +83,6 @@ body {
   margin-right: 30%;
   margin-top: 300px;
   text-align: center;
-  left:2%;
 }
 
 #spinningTitle {
