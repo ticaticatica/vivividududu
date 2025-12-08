@@ -16,7 +16,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; 
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -30,9 +30,6 @@ body {
   align-items: center;
   padding: 40px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
-
-  /* 🔥 기존 직선 그리드 제거 */
-  /*background: transparent;*/
 }
 
 .card {
@@ -41,6 +38,7 @@ body {
   max-width: 640px;
   width: 100%;
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); /* Safari 대응 */
 }
 
 /* ================================
@@ -48,8 +46,8 @@ body {
 ================================ */
 .top-title {
   position: fixed;
-  top: 10px;          /* 화면 상단에서 거리 */
-  left: 50%;
+  top: 10px;
+  left: 20%;
   transform: translateX(-50%);
 
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
@@ -58,17 +56,14 @@ body {
   letter-spacing: 1px;
   font-style: italic;
 
-
   opacity: 0.8;
-  z-index: 10;        /* 캔버스 위로 올라오도록 */
-  pointer-events: none; /* 클릭 간섭 없음 */
+  z-index: 10;
+  pointer-events: none;
 }
-
 
 /* -----------------------------
    TITLE ANIMATION
 ------------------------------ */
-
 @keyframes wigglyTitle {
   0%   { transform: rotate(0deg) translateY(0px); }
   25%  { transform: rotate(1.4deg) translateY(-2px); }
@@ -79,7 +74,7 @@ body {
 
 .title {
   font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 4em;
   font-style: italic;
   line-height: 1.0;
@@ -97,19 +92,20 @@ body {
 #spinningTitle:hover .title {
   animation: spinFast 1s linear infinite !important;
 }
-/* 빠른 회전 */
+
+/* 빠른 회전 (JS에서도 사용됨) */
 .spin-fast {
   animation: spinFast 1s linear infinite !important;
+}
 
 @keyframes spinFast {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* -----------------------------
    SUBTITLE WORD WIGGLE
 ------------------------------ */
-
 h1.subtitle {
   line-height: 1.1 !important;
   font-weight: 200;
@@ -127,8 +123,8 @@ h1.subtitle {
 
 .word:nth-child(odd)  { --tilt: rotate(-6deg); --shiftX: -4px; }
 .word:nth-child(even) { --tilt: rotate(5deg);  --shiftX: 6px; }
-.word:nth-child(3n) { animation-delay: 0.15s; }
-.word:nth-child(4n) { animation-delay: 0.33s; }
+.word:nth-child(3n)   { animation-delay: 0.15s; }
+.word:nth-child(4n)   { animation-delay: 0.33s; }
 
 @keyframes floatWiggle {
   0%   { transform: var(--tilt) translate(var(--shiftX), 0); }
@@ -138,11 +134,14 @@ h1.subtitle {
   100% { transform: var(--tilt) translate(var(--shiftX), 0); }
 }
 
+/* -----------------------------
+   FOOTER
+------------------------------ */
 .footer {
   position: fixed;
-  bottom: none;  /* 화면 아래에서 20px */
-  left: 50%;  /* 화면의 가운데 */
-  transform: translateX(-50%); /* 자기 너비의 절반만 왼쪽으로 당겨서 정확한 중앙 */
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 12px;
   opacity: 0.5;
   pointer-events: none;
