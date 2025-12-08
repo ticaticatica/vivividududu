@@ -122,7 +122,7 @@ body {
    LINE WIGGLE (줄 전체)
 ------------------------------ */
 /* 기본 wiggle */
-.subtitle .line {
+.subtitle.line {
   display: inline-block;
   transform-origin: center;
   margin-bottom: 10px;
@@ -139,7 +139,7 @@ body {
 }
 
 /* 마우스를 올렸을 때: 확! 확! */
-.subtitle:hover .line {
+.subtitle:hover.line {
   animation: lineWiggleStrong 0.8s ease-in-out infinite;
 }
 
@@ -155,7 +155,7 @@ body {
    WORD WIGGLE (단어 개별)
 ------------------------------ */
 /* 기본 단어 움직임 */
-.subtitle .word {
+.subtitle.word {
   display: inline-block;
   animation: wordFloat 2.6s ease-in-out infinite;
   transition: animation 0.2s ease;
@@ -170,7 +170,7 @@ body {
 }
 
 /* hover → 확확! */
-.subtitle:hover .word {
+.subtitle:hover.word {
   animation: wordFloatStrong 0.6s ease-in-out infinite;
 }
 
