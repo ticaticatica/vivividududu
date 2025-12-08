@@ -162,9 +162,22 @@ body {
   height: 35vh;
 
   overflow: hidden;
-  z-index: -1; 
+  z-index: -1;
   pointer-events: none;
   background: white;
+}
+
+/* 흰색 오버레이 → 완전 불투명 말고 70~90% 투명도가 베스트 */
+.video-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.8); /* <— 핵심 개선 */
+  mix-blend-mode: screen;               /* lighten보다 안정적 */
+  
+  pointer-events: none;
+  z-index: 1;
 }
 
 .video-wrapper video {
@@ -174,12 +187,4 @@ body {
 
   animation: videoWiggle 12s ease-in-out infinite;
   transform-origin: center;
-}
-
-@keyframes videoWiggle {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  25%  { transform: scale(1.06) translate(-2%, -1%); }
-  50%  { transform: scale(1.05) translate(1%, 1%); }
-  75%  { transform: scale(1.06) translate(-1%, 2%); }
-  100% { transform: scale(1.05) translate(0, 0); }
 }
