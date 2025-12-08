@@ -24,7 +24,6 @@ body {
   background: rgba(255, 255, 255, 0.5);
   padding: 20px;
   max-width: none;
-  width: 100%
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -72,7 +71,7 @@ body {
 .title {
   font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
   font-weight: 900;
-  font-size: 4em;
+  font-size: 5em;
   font-style: italic;
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
