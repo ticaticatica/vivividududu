@@ -18,7 +18,7 @@
 body {
   min-height: 100vh;
   display: block;   /* flex 제거 */
-  /*justify-content: center;*/
+  justify-content: center;
   align-items: center;
   padding: 40px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
