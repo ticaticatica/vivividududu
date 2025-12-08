@@ -79,6 +79,7 @@ body {
   font-size: 4em;
   font-style: italic;
   line-height: 1.0;
+  margin-left: -20px;  /* 살짝 왼쪽으로 당기기 */
   display: inline-block;
   animation: wigglyTitle 2.4s infinite ease-in-out;
 }
