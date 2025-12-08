@@ -82,3 +82,23 @@ function drawWavyGrid() {
 }
 
 drawWavyGrid();
+
+/* ---------------------------------------------------
+   TITLE HOVER SPIN (회전 기능 복구)
+--------------------------------------------------- */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const spinningTitle = document.getElementById("spinningTitle");
+  const titleElement = spinningTitle?.querySelector(".title");
+
+  if (spinningTitle && titleElement) {
+    spinningTitle.addEventListener("mouseenter", () => {
+      titleElement.classList.add("spin-fast");
+    });
+
+    spinningTitle.addEventListener("mouseleave", () => {
+      titleElement.classList.remove("spin-fast");
+    });
+  }
+});
+
