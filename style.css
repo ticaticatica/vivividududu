@@ -54,6 +54,7 @@ body {
    TITLE + SUBTITLE 가로 배치 컨테이너
 ---------------------------------------- */
 .title-subtitle-wrap {
+  left: 5%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -80,7 +81,6 @@ body {
   font-size: 4em;
   font-style: italic;
   line-height: 1;
-  margin-left: 1%
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
   
