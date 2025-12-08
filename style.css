@@ -17,9 +17,9 @@
 ------------------------------ */
 body {
   min-height: 100vh;
-  display: flex;
+  /*display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
   padding: 20px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
@@ -28,7 +28,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
   padding: 20px;
   max-width: 2000px;
-  width: 100%;
+  width: 90%;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -75,7 +75,6 @@ body {
 }
 
 .title {
-  left: 2%;
   font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: 4em;
