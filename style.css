@@ -57,6 +57,7 @@ body {
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
+  margin-left: auto;
 }
 
 /* ---------------------------------------
