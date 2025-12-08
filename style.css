@@ -52,7 +52,7 @@ body {
    TITLE + SUBTITLE 가로 배치 컨테이너
 ---------------------------------------- */
 .title-subtitle-wrap {
-  display: inline-block;
+  display: block;
   justify-content: left;
   align-items: left;
   left:0;
