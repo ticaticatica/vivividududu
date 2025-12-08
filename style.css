@@ -53,9 +53,9 @@ body {
 .title-subtitle-wrap {
   justify-content: left;
   align-items: left;
-  gap: 300px;
+  gap: 80px;
   width: 100%;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 /* -----------------------------
