@@ -8,7 +8,7 @@
 }
 
 /* -----------------------------
-   BACKGROUND CANVAS
+   BACKGROUND CANVAS (곡선 grid)
 ------------------------------ */
 #wavyCanvas {
   position: fixed;
@@ -16,7 +16,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* 뒤로 보내기 */
+  z-index: -1; 
   pointer-events: none;
 }
 
@@ -29,9 +29,10 @@ body {
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  color: #111;
-  background: transparent; /* 캔버스에 의존 */
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
+
+  /* 🔥 기존 직선 그리드 제거 */
+  background: transparent;
 }
 
 .card {
@@ -59,18 +60,18 @@ body {
   font-weight: 900;
   font-size: 4em;
   font-style: italic;
+  line-height: 1.0;
   display: inline-block;
-  line-height: 1.1; /* title 줄간격 */
   animation: wigglyTitle 2.4s infinite ease-in-out;
 }
 
-/* hover → 360° spin */
 #spinningTitle {
   display: inline-block;
   cursor: pointer;
-  margin-bottom: 48px; /* 🔥 넉넉하고 예쁜 간격 */
+  margin-bottom: 60px;
 }
 
+/* hover → spin */
 #spinningTitle:hover .title {
   animation: spinFast 1s linear infinite !important;
 }
@@ -84,9 +85,8 @@ body {
    SUBTITLE WORD WIGGLE
 ------------------------------ */
 
-/* subtitle 줄 간격 안정 적용 */
 h1.subtitle {
-  line-height: 1.3 !important;  /* 🔥 줄간격 안정 */
+  line-height: 1.1 !important;
   font-weight: 300;
   text-align: right;
 }
@@ -94,22 +94,13 @@ h1.subtitle {
 .word {
   display: inline-block;
   position: relative;
-
   --tilt: rotate(0deg);
   --shiftX: 0px;
-
   animation: floatWiggle 3s infinite ease-in-out;
 }
 
-.word:nth-child(odd) {
-  --tilt: rotate(-6deg);
-  --shiftX: -4px;
-}
-
-.word:nth-child(even) {
-  --tilt: rotate(5deg);
-  --shiftX: 6px;
-}
+.word:nth-child(odd)  { --tilt: rotate(-6deg); --shiftX: -4px; }
+.word:nth-child(even) { --tilt: rotate(5deg);  --shiftX: 6px; }
 
 .word:nth-child(3n) { animation-delay: 0.15s; }
 .word:nth-child(4n) { animation-delay: 0.33s; }
@@ -120,4 +111,13 @@ h1.subtitle {
   50%  { transform: var(--tilt) translate(var(--shiftX), 3px); }
   75%  { transform: var(--tilt) translate(var(--shiftX), -2px); }
   100% { transform: var(--tilt) translate(var(--shiftX), 0); }
+}
+
+.footer {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 14px;
+  opacity: 0.5;
+  pointer-events: none;
 }
