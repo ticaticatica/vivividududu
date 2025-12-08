@@ -2,6 +2,7 @@
    SUBTITLE: 줄 랜덤 기울기 + 단어 wiggle span 생성
 --------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
+
   const text = document.getElementById("wigglyText");
 
   if (text) {
@@ -14,15 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const processed = lines
       .map(line => {
-        const angle = (Math.random() * 10 - 5).toFixed(2); // -5 ~ +5deg
+        const angle = (Math.random() * 12 - 6).toFixed(2); // 더 과격!
         return `
           <span class="line" style="--line-tilt:${angle}deg;">
             ${line
               .trim()
               .split(/\s+/)
               .map(word => `<span class="word">${word}</span>`)
-              .join(" ")
-            }
+              .join(" ")}
           </span>
         `;
       })
@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     text.innerHTML = processed;
   }
-  });
 
   /* ---------------------------------------------------
-     TITLE HOVER SPIN
+     TITLE HOVER SPIN (정상작동)
   --------------------------------------------------- */
   const spinningTitle = document.getElementById("spinningTitle");
   const titleElement = spinningTitle?.querySelector(".title");
@@ -47,10 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
       titleElement.classList.remove("spin-fast");
     });
   }
+
 });
+/* ← 여기서 딱 한 번만 닫힘 */
+
 
 /* ---------------------------------------------------
-   WAVY GRID CANVAS
+   WAVY GRID CANVAS (정상)
 --------------------------------------------------- */
 const canvas = document.getElementById("wavyCanvas");
 const ctx = canvas.getContext("2d");
