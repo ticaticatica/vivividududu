@@ -55,9 +55,8 @@ body {
 ---------------------------------------- */
 .title-subtitle-wrap {
   display: flex;
-  /*justify-content: space-between;*/
+  justify-content: flex-start;  /* 왼쪽 정렬 */
   /*align-items: flex-start;*/
-  left:20pt;
   gap: 80px;
   width: 100%;
   margin-top: 100px;
