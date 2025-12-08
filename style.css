@@ -48,9 +48,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 80px;
+  gap: 50px;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 /* -----------------------------
@@ -64,7 +64,7 @@ body {
   font-size: 22px;
   font-weight: 200;
   font-style: italic;
-  line-height: 1;
+  line-height: 1.0;
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
@@ -120,37 +120,34 @@ body {
    LINE WIGGLE (줄 전체)
 ------------------------------ */
 .line {
-  display: block;
-  transform-origin: left top;
-  margin-bottom: 10px;
-  animation: lineWiggle 3s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: center;
+  animation: lineWiggle 2.6s infinite ease-in-out;
 }
 
 @keyframes lineWiggle {
   0%   { transform: rotate(var(--line-tilt)); }
-  50%  { transform: rotate(calc(var(--line-tilt) + 1.2deg)); }
+  30%  { transform: rotate(calc(var(--line-tilt) + 2deg)); }
+  60%  { transform: rotate(calc(var(--line-tilt) - 2deg)); }
   100% { transform: rotate(var(--line-tilt)); }
 }
+
 
 /* -----------------------------
    WORD WIGGLE (단어 개별)
 ------------------------------ */
 .word {
   display: inline-block;
-  position: relative;
-  animation: floatWiggle 2.4s ease-in-out infinite;
-  --tilt: rotate(0deg);
-  --shiftX: 0px;
+  animation: wordFloat 2.8s infinite ease-in-out;
 }
 
-@keyframes floatWiggle {
-  0%   { transform: var(--tilt) translate(var(--shiftX), 0); }
-  25%  { transform: var(--tilt) translate(var(--shiftX), -6px); }
-  50%  { transform: var(--tilt) translate(var(--shiftX), 4px); }
-  75%  { transform: var(--tilt) translate(var(--shiftX), -3px); }
-  100% { transform: var(--tilt) translate(var(--shiftX), 0); }
+@keyframes wordFloat {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-5px); }
+  50%  { transform: translateY(4px); }
+  75%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
 }
-
 /* -----------------------------
    FOOTER
 ------------------------------ */

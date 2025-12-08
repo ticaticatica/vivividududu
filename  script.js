@@ -7,33 +7,36 @@ document.addEventListener("DOMContentLoaded", () => {
    SUBTITLE: 줄 랜덤 기울기 + 단어 wiggle
 --------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
+
   const text = document.getElementById("wigglyText");
 
-  if (text) {
-    let cleanHTML = text.innerHTML
-      .replace(/\r?\n|\r/g, "")
-      .replace(/<br\s*\/?>/gi, "<br>")
-      .trim();
+if (text) {
+  let cleanHTML = text.innerHTML
+    .replace(/\r?\n|\r/g, "")
+    .replace(/<br\s*\/?>/gi, "<br>")
+    .trim();
 
-    const lines = cleanHTML.split("<br>");
+  const lines = cleanHTML.split("<br>");
 
-    const processed = lines
-      .map(line => {
-        const angle = (Math.random() * 8 - 4).toFixed(2);
-        return `
-          <span class="line" style="--line-tilt:${angle}deg">
-            ${line
-              .trim()
-              .split(/\s+/)
-              .map(word => `<span class="word">${word}</span>`)
-              .join(" ")}
-          </span>
-        `;
-      })
-      .join("");
+  const processed = lines
+    .map(line => {
+      const angle = (Math.random() * 10 - 5).toFixed(2); // -5 ~ +5 more visible
+      return `
+        <span class="line" style="--line-tilt:${angle}deg;">
+          ${line
+            .trim()
+            .split(/\s+/)
+            .map(word => `<span class="word">${word}</span>`)
+            .join(" ")
+          }
+        </span>
+      `;
+    })
+    .join("<br>");
 
-    text.innerHTML = processed;
-  }
+  text.innerHTML = processed;
+}
+
 
   /* ---------------------------------------------------
      TITLE HOVER SPIN
