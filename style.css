@@ -29,6 +29,7 @@
    LAYOUT
 ------------------------------ */
 body {
+  display: fixed;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
