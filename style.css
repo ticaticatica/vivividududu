@@ -14,7 +14,7 @@
   position: fixed;
   top: 80px;
   left: 0;
-  width: 100%;
+  width: 95%;
   border: 0;
   border-top: 1px solid #000;
   z-index: 1000;
@@ -82,6 +82,7 @@ body {
 }
 
 .title {
+  left: 20%;
   font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: 4em;
@@ -89,7 +90,7 @@ body {
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
-  margin-left: 90px;
+  
 }
 
 #spinningTitle {
