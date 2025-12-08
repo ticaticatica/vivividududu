@@ -27,7 +27,7 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 20px;
-  max-width: 1600px;
+  max-width: 2000px;
   width: 100%;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -54,7 +54,7 @@ body {
    TITLE + SUBTITLE 가로 배치 컨테이너
 ---------------------------------------- */
 .title-subtitle-wrap {
-  left: 5%;
+  left: 2%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -75,7 +75,7 @@ body {
 }
 
 .title {
-  left: 5%;
+  left: 2%;
   font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: 4em;
