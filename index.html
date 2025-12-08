@@ -2,74 +2,56 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <title>My Grid Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- SEO -->
-  <meta name="description" content="Welcome to Viddle Village - A wiggly world for wiggly souls" />
-  <meta name="keywords" content="viddle village, creative space, doodle laboratory" />
-  <meta name="author" content="viddlevillage" />
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Viddle Village" />
-  <meta property="og:description" content="A wiggly world for wiggly souls" />
-  <meta property="og:type" content="website" />
-  
-  <title>Viddle Village - Doodle Space Laboratory</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-  
-  <!-- 폰트 최적화 -->
-  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
-  <link rel="stylesheet" href="https://use.typekit.net/urt5vwi.css">
-  
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/urt5vwi.css">
+
+  <style>
+    body {
+      font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- 곡선 애니메이션 grid 캔버스 -->
-  <canvas id="wavyCanvas" aria-label="Animated wavy grid background" role="img">
-    Your browser does not support the canvas element.
-  </canvas>
+  <canvas id="wavyCanvas"></canvas>
 
   <!-- 상단 제목 -->
-  <header class="top-title" role="banner">
+  <div class="top-title">
     <div>Doodle</div>
     <div>Space</div>
     <div>Laboratory</div>
-  </header>
+  </div>
 
   <!-- 검은 얇은 라인 -->
-  <hr class="fixed-line" aria-hidden="true">
-  
-  <!-- 메인 콘텐츠 -->
-  <main class="title-subtitle-wrap">
-    <!-- 타이틀 회전 영역 -->
-    <div id="spinningTitle">
-      <h1 class="title">
-        Welcome to <br>
-        Viddle Village
-      </h1>
-    </div>
+  <hr style="border: 0; border-top: 1px solid #000; margin: 20px 0;">
 
-    <!-- 서브 타이틀 (JS가 재구성함) -->
-    <h2 class="subtitle" id="wigglyText">
-      Everything 
-      here goes
-      viddle-viddle
-      <br>
-      A wiggly world
-      for 
-      wiggly souls
-    </h2>
-  </main>
+  <!-- 타이틀 회전 영역 -->
+  <div id="spinningTitle">
+    <div class="title">
+      Welcome to <br>
+      Viddle Village
+    </div>
+  </div>
+
+  <!-- 서브타이틀 -->
+  <h1 class="subtitle" id="wigglyText">
+    Everything here goes 
+    <br>&nbsp;&nbsp;&nbsp; viddle-viddle.
+    <br><br>
+    <blockquote>A wiggly world</blockquote>
+    <span>for wiggly souls.</span>
+  </h1>
 
   <!-- 푸터 -->
-  <footer class="footer" role="contentinfo">
+  <div class="footer">
     © 2025 viddlevillage
-  </footer>
+  </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
