@@ -19,7 +19,7 @@
 ------------------------------ */
 .fixed-line {
   position: fixed;
-  top: 40px;
+  top: 50px;
   left: 0;
   width: 100%; /* 전체 가로선 보이도록 */
   border: 0;
@@ -42,7 +42,7 @@ body {
 ------------------------------ */
 .top-title {
   position: fixed;
-  top: 20px;
+  top: 25px;
   left: 2vw;
   font-size: 1.1rem;
   font-weight: 100;
