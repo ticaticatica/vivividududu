@@ -118,16 +118,15 @@ body {
 .subtitle .line {
   display: inline-block;
   transform-origin: center center;
-  animation: lineWiggle 3s  infinite ease-in-out;
+  animation: lineWiggle 3s ease-in-out infinite ;
 }
 
-@keyframes lineWiggle {
+@keyframes lineWiggle 
   0%   { transform: rotate(var(--line-tilt)) translateY(0px); }
-  25%  { transform: rotate(calc(var(--line-tilt) + 3deg)) translateY(-35px); }
-  50%  { transform: rotate(calc(var(--line-tilt) - 3deg)) translateY(66px); }
-  75%  { transform: rotate(calc(var(--line-tilt) + 1.5deg)) translateY(-34px); }
+  25%  { transform: rotate(calc(var(--line-tilt) + 30deg)) translateY(-35px); }
+  50%  { transform: rotate(calc(var(--line-tilt) - 45deg)) translateY(66px); }
+  75%  { transform: rotate(calc(var(--line-tilt) + 15deg)) translateY(-34px); }
   100% { transform: rotate(var(--line-tilt)) translateY(0px); }
-}
 
 /* -----------------------------
    FOOTER
