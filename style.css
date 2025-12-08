@@ -81,6 +81,7 @@ body {
   transform-origin: center center; /* 회전 축 중앙 */
   margin-top: 300px;
   margin-left: 20%;
+  margin-right: 20%;
 }
 
 #spinningTitle {
