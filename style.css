@@ -27,7 +27,7 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 10px;
-  max-width: none;
+  max-width: 1600;
   width: 100%;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px); 
@@ -78,10 +78,10 @@ body {
   line-height: 1;
   text-align: center;
   animation: wigglyTitle 2.4s infinite ease-in-out;
-  transform-origin: center center; /* 회전 축 중앙 */
+  transform-origin: center; /* 회전 축 중앙 */
   margin-top: 300px;
   margin-left: 5%;
-  margin-right: 50%;
+  margin-right: 20%;
 }
 
 #spinningTitle {
