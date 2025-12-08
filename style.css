@@ -20,8 +20,8 @@ body {
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* 기존: center → 텍스트 위로 이동 */
+  padding-top: 8vh;
 }
 
 
@@ -51,6 +51,7 @@ body {
   gap: 4vh;
   width: 100%;
   text-align: center;
+  margin-top: 8vh;  /* 기존 15vh → 10vh 같은 식으로 조정 */
 }
 
 /* ---------------------------------------
@@ -165,7 +166,7 @@ body {
   bottom: 0;
 
   width: 100%;
-  height: 35vh;
+  height: 50vh;
 
   overflow: hidden;
   z-index: -1; 
