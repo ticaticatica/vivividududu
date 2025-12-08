@@ -19,19 +19,29 @@ h1.subtitle {
   text-align: right;
 }
 
-/* 각 줄에 공통 애니메이션 */
 h1.subtitle span {
-  display: inline-block;
+  display: inline-block; /* transform 에 필수 */
   animation: bounceSoft 2.2s infinite ease-in-out;
 }
 
-/* 줄마다 다른 딜레이 주기 (여기서 마법이 일어남) */
-h1.subtitle span:nth-child(1) { animation-delay: 0s; }
-h1.subtitle span:nth-child(2) { animation-delay: 0.3s; }
-h1.subtitle span:nth-child(3) { animation-delay: 0.6s; }
-h1.subtitle span:nth-child(4) { animation-delay: 0.9s; }
+/* 🎯 줄마다 흩어진 느낌(각도 + 위치) 다르게 적용 */
+.line1 {
+  transform: rotate(-2deg) translateX(5px);
+}
 
-/* 몽글몽글 점프 애니메이션 */
+.line2 {
+  transform: rotate(6deg) translateX(-10px); /* 두 번째 줄: 오른쪽 위로 기울기 */
+}
+
+.line3 {
+  transform: rotate(-4deg) translateX(8px); /* 세 번째 줄: 반대 방향 */
+}
+
+.line4 {
+  transform: rotate(5deg) translateX(-6px); /* 네 번째 줄: 또 다른 대각선 */
+}
+
+/* 몽글몽글 바운스 */
 @keyframes bounceSoft {
   0%   { transform: translateY(0); }
   20%  { transform: translateY(-6px); }
@@ -53,12 +63,13 @@ h1.subtitle span:nth-child(4) { animation-delay: 0.9s; }
   <div class="title">Welcome to <br>
    Viddle Village</div>
 <br><br>
-  <h1 class="subtitle">
-    <span></span>Everything here goes</span> <br>
-          <span>viddle-viddle.</span><br>
-    <span>A wiggly world</span> <br>
-       <span> for wiggly souls.</span>
-  </h1>
+<h1 class="subtitle">
+  <span class="line1">Everything here goes</span><br>
+  <span class="line2">viddle-viddle.</span><br>
+  <span class="line3">A wiggly world</span><br>
+  <span class="line4">for wiggly souls.</span>
+</h1>
+
 <br><br><br><br>
   <div class="footer">
     © 2025 viddlevillage 
