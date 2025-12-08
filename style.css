@@ -90,7 +90,7 @@ body {
   font-style: italic;
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
-  margin-left: 100px;
+  margin-left: 130px;
 }
 
 #spinningTitle {
@@ -116,7 +116,7 @@ body {
   font-size: 30px;
   line-height: 1.2;
   margin: 0;
-  margin-right: 100px;
+  margin-right: 130px;
   flex: 1;
 }
 
