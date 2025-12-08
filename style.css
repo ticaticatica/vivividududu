@@ -80,6 +80,12 @@ body {
    WORD ANIMATION — 단어가 흩어지고 wiggle
 =============================================================== */
 
+/* 👉 줄 전체를 감싸는 line wrapper 스타일 */
+.line {
+  display: block;
+  margin-bottom: 6px;  /* ← 줄 간격 조절 (원하면 더 키우거나 줄여도 됨) */
+}
+
 .word {
   display: inline-block;
   position: relative;
