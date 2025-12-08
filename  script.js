@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("페이지 로드 완료!");
 
-  /* ---------------------------------------------------
-     1) 카드(.card) 클릭 시 테두리 밝아졌다 돌아오는 효과
-  --------------------------------------------------- */
+  /* ----------------------------
+     카드 클릭 시 테두리 반짝
+  ---------------------------- */
   const card = document.querySelector(".card");
 
   if (card) {
@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------------------------------------------------
-     2) 텍스트 각 단어를 자동으로 <span class="word"> 로 감싸기
-  --------------------------------------------------- */
+  /* ----------------------------
+     단어를 span.word로 자동 래핑
+  ---------------------------- */
   const text = document.getElementById("wigglyText");
 
   if (text) {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(line =>
         line
           .trim()
-          .split(/\s+/)     // 🔥 줄 앞·공백 문제 해결
+          .split(/\s+/)
           .map(word => `<span class="word">${word}</span>`)
           .join(" ")
       )
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     text.innerHTML = processed;
   }
 
-  /* ---------------------------------------------------
-     3) 제목 회전 효과 (삭제됨 — hover로 대체됨)
-  --------------------------------------------------- */
-
-  // ❌ 이
+  /* ----------------------------
+     제목 회전은 JS 사용 ❌
+     hover 기반으로 CSS에서 처리함
+  ---------------------------- */
+});

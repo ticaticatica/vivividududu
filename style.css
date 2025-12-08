@@ -21,10 +21,9 @@ body {
   align-items: center;
   padding: 40px 20px;
 
-  /* 얇은 라인 그리드 배경 */
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -40,8 +39,9 @@ body {
 }
 
 /* ----------------------------
-   wiggly 기본 제목 스타일
+   제목 기본 wiggly 효과
 ---------------------------- */
+
 @keyframes wiggly {
   0%   { transform: rotate(0deg) translateY(0px); }
   25%  { transform: rotate(1.4deg) translateY(-2px); }
@@ -56,13 +56,12 @@ body {
   font-size: 4em;
   font-style: italic;
   display: inline-block;
-  animation: wiggly 2.4s infinite ease-in-out; /* 기본은 흔들흔들 */
+  animation: wiggly 2.4s infinite ease-in-out;
 }
 
 /* ----------------------------
-   hover 시 360도 회전
+   hover 시 spinFast로 전환
 ---------------------------- */
-
 #spinningTitle {
   display: inline-block;
   cursor: pointer;
@@ -72,48 +71,45 @@ body {
   animation: spinFast 1s linear infinite !important;
 }
 
-/* 빠른 회전 */
 @keyframes spinFast {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 /* ============================================================
-   ✨ 단어(word) 단위로 흩어지고 흔들리는 애니메이션
+   WORD ANIMATION — 단어가 흩어지고 wiggle
 =============================================================== */
 
 .word {
   display: inline-block;
   position: relative;
 
-  /* 단어마다 다른 기울기/위치 변수 */
   --tilt: rotate(0deg);
   --shiftX: 0px;
 
   animation: floatWiggle 3s infinite ease-in-out;
 }
 
-/* 단어마다 기울기 다르게 */
-.word:nth-of-type(odd) {
+/* 기울기 & 위치 랜덤 느낌 */
+.word:nth-child(odd) {
   --tilt: rotate(-6deg);
   --shiftX: -4px;
 }
 
-.word:nth-of-type(even) {
+.word:nth-child(even) {
   --tilt: rotate(5deg);
   --shiftX: 6px;
 }
 
-/* 타이밍 다르게 */
-.word:nth-of-type(3n) {
+/* 타이밍 다양화 */
+.word:nth-child(3n) {
   animation-delay: 0.15s;
 }
 
-.word:nth-of-type(4n) {
+.word:nth-child(4n) {
   animation-delay: 0.33s;
 }
 
-/* 몽글몽글 word wiggle */
 @keyframes floatWiggle {
   0%   { transform: var(--tilt) translate(var(--shiftX), 0); }
   25%  { transform: var(--tilt) translate(var(--shiftX), -4px); }

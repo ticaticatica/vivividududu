@@ -5,18 +5,15 @@
   <title>My Grid Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 외부 CSS -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/urt5vwi.css">
 
-  <!-- HTML 내부 스타일 (필요 최소만 유지) -->
   <style>
     body {
       font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
     }
 
+    /* subtitle 스타일 */
     h1.subtitle {
       font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
       line-height: 1.1;
@@ -33,7 +30,7 @@
 
   <br>
 
-  <!-- 제목 wrapper (hover 시 회전) -->
+  <!-- 제목 (기본 wiggly, hover 시 회전) -->
   <div id="spinningTitle">
     <div class="title">
       Welcome to <br>
@@ -43,7 +40,7 @@
 
   <br><br>
 
-  <!-- 단어 단위 wiggle 대상 -->
+  <!-- 단어 애니메이션 대상 -->
   <h1 class="subtitle" id="wigglyText">
 Everything here goes<br>
 viddle-viddle.<br>
@@ -58,8 +55,6 @@ for wiggly souls.
   </div>
 </main>
 
-<!-- JavaScript -->
 <script src="script.js"></script>
-
 </body>
 </html>
