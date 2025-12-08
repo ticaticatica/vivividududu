@@ -46,7 +46,7 @@ body {
   align-items: center;
 
   position: relative;
-  top: 80px; /* ← 원하는 만큼 조절 */
+  top: 120px; /* ← 원하는 만큼 조절 */
 }
 
 /* ---------------------------------------
@@ -168,18 +168,6 @@ body {
   background: white;
 }
 
-/* 흰색 오버레이 → 완전 불투명 말고 70~90% 투명도가 베스트 */
-.video-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: rgba(255, 255, 255, 0.8); /* <— 핵심 개선 */
-  mix-blend-mode: screen;               /* lighten보다 안정적 */
-  
-  pointer-events: none;
-  z-index: 1;
-}
 
 .video-wrapper video {
   width: 100%;
