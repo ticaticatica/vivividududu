@@ -54,7 +54,7 @@ body {
    TITLE + SUBTITLE 가로 배치 컨테이너
 ---------------------------------------- */
 .title-subtitle-wrap {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   align-items: flex-start;
   left:20pt;
