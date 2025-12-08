@@ -1,11 +1,15 @@
-/* 전체 초기화 */
+/* ----------------------------
+   전체 초기화
+---------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 배경 + 전체 레이아웃 */
+/* ----------------------------
+   배경 + 전체 레이아웃
+---------------------------- */
 body {
   min-height: 100vh;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
@@ -24,7 +28,9 @@ body {
   background-size: 40px 40px;
 }
 
-/* 카드 */
+/* ----------------------------
+   카드
+---------------------------- */
 .card {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 16px;
@@ -35,14 +41,18 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* 제목 기본 스타일 (여기 오류 있었음) */
+/* ----------------------------
+   제목 기본 스타일
+---------------------------- */
 .title {
   font-size: 32px;
   line-height: 1.1;
-  margin-bottom: 24px; /* ← 값 추가해서 오류 해결 */
+  margin-bottom: 24px;
 }
 
-/* 흔들흔들 애니메이션 */
+/* ----------------------------
+   흔들흔들 title 애니메이션
+---------------------------- */
 @keyframes wiggly {
   0%   { transform: rotate(0deg) translateY(0px); }
   25%  { transform: rotate(1.4deg) translateY(-2px); }
@@ -51,7 +61,9 @@ body {
   100% { transform: rotate(0deg) translateY(0px); }
 }
 
-/* 최종 title 스타일 + 애니메이션 */
+/* ----------------------------
+   최종 title 스타일 적용
+---------------------------- */
 .title {
   font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
   font-weight: 900;
@@ -60,4 +72,42 @@ body {
 
   display: inline-block;
   animation: wiggly 2.4s infinite ease-in-out;
+}
+
+/* ============================================================
+   ✨✨✨ 단어(word) 단위로 흩어지고 흔들리는 애니메이션 ✨✨✨
+   (우리가 새로 만든 기능)
+=============================================================== */
+
+/* 각 단어 기본 스타일 */
+.word {
+  display: inline-block;
+  position: relative;
+  animation: floatWiggle 3s infinite ease-in-out;
+}
+
+/* 단어마다 다른 각도/위치 적용해 ‘흩어진 느낌’ 만들기 */
+.word:nth-child(odd) {
+  transform: rotate(-4deg) translateY(2px);
+}
+
+.word:nth-child(even) {
+  transform: rotate(5deg) translateY(-3px);
+}
+
+.word:nth-child(3n) {
+  transform: rotate(-2deg) translateX(-4px);
+}
+
+.word:nth-child(4n) {
+  transform: rotate(7deg) translateX(6px);
+}
+
+/* 몽글몽글 위아래 애니메이션 */
+@keyframes floatWiggle {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-4px) rotate(1deg); }
+  50%  { transform: translateY(3px) rotate(-1deg); }
+  75%  { transform: translateY(-2px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
