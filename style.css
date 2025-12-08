@@ -51,8 +51,7 @@ body {
   top: 28px;          /* 화면 상단에서 거리 */
   left: 50%;
   transform: translateX(-50%);
-
-  font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
+  
   font-weight: 100;
   font-size: 22px;
   letter-spacing: 1px;
