@@ -94,7 +94,7 @@ body {
 #spinningTitle:hover .title,
 .spin-fast {
   animation: spinFast 1s linear infinite !important;
-  transform-origin: center center;
+  transform-origin: center;
 }
 
 @keyframes spinFast {
