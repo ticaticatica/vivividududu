@@ -51,7 +51,8 @@ body {
   top: 28px;          /* 화면 상단에서 거리 */
   left: 50%;
   transform: translateX(-50%);
-  
+
+  font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
   font-weight: 100;
   font-size: 22px;
   letter-spacing: 1px;
@@ -105,10 +106,10 @@ body {
 ------------------------------ */
 
 h1.subtitle {
-  line-height: 1.1 !important;
+  line-height: 1.0 !important;
   font-weight: 250;
   text-align: right;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .word {
