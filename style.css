@@ -27,8 +27,7 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 10px;
-  max-width: 1600;
-  width: 100%;
+  max-width: none;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px); 
 } 
