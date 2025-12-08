@@ -1,59 +1,51 @@
-/* ----------------------------------------
+/* -----------------------------
    RESET
----------------------------------------- */
+------------------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ----------------------------------------
-   BACKGROUND + WAVY GRID
----------------------------------------- */
+/* -----------------------------
+   BACKGROUND CANVAS
+------------------------------ */
+#wavyCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* 뒤로 보내기 */
+  pointer-events: none;
+}
+
+/* -----------------------------
+   LAYOUT
+------------------------------ */
 body {
   min-height: 100vh;
-  font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
-  background-color: #ffffff;
-  color: #111111;
-
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-
-  /* 배경 격자 */
-  background-image:
-    linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-
-  /* SVG 필터 적용 */
-  filter: url(#wavyGrid);
-
-  /* 🔥 배경 wavy 애니메이션 */
-  animation: waveMove 6s ease-in-out infinite;
+  color: #111;
+  background: transparent; /* 캔버스에 의존 */
+  font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
 
-@keyframes waveMove {
-  0%   { filter: url(#wavyGrid); }
-  50%  { filter: url(#wavyGridStrong); } 
-  100% { filter: url(#wavyGrid); }
-}
-
-/* ----------------------------------------
-   CARD
----------------------------------------- */
 .card {
-  background-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   padding: 32px 28px;
   max-width: 640px;
   width: 100%;
   backdrop-filter: blur(4px);
 }
 
-/* ----------------------------------------
-   TITLE (Wiggly 기본)
----------------------------------------- */
+/* -----------------------------
+   TITLE ANIMATION
+------------------------------ */
+
 @keyframes wigglyTitle {
   0%   { transform: rotate(0deg) translateY(0px); }
   25%  { transform: rotate(1.4deg) translateY(-2px); }
@@ -67,17 +59,16 @@ body {
   font-weight: 900;
   font-size: 4em;
   font-style: italic;
-  line-height: 1.1;
   display: inline-block;
+  line-height: 1.1; /* title 줄간격 */
   animation: wigglyTitle 2.4s infinite ease-in-out;
 }
 
-/* ----------------------------------------
-   TITLE — Hover 시 spinFast로 변경
----------------------------------------- */
+/* hover → 360° spin */
 #spinningTitle {
   display: inline-block;
   cursor: pointer;
+  margin-bottom: 48px; /* 🔥 넉넉하고 예쁜 간격 */
 }
 
 #spinningTitle:hover .title {
@@ -89,14 +80,15 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* ----------------------------------------
-   WORD ANIMATION (Subtitle)
----------------------------------------- */
+/* -----------------------------
+   SUBTITLE WORD WIGGLE
+------------------------------ */
 
-/* 각 줄 wrapper */
-.line {
-  display: block;
-  margin-bottom: 6px;
+/* subtitle 줄 간격 안정 적용 */
+h1.subtitle {
+  line-height: 1.3 !important;  /* 🔥 줄간격 안정 */
+  font-weight: 300;
+  text-align: right;
 }
 
 .word {
@@ -109,7 +101,6 @@ body {
   animation: floatWiggle 3s infinite ease-in-out;
 }
 
-/* 랜덤한 느낌 만들기 */
 .word:nth-child(odd) {
   --tilt: rotate(-6deg);
   --shiftX: -4px;
@@ -120,14 +111,8 @@ body {
   --shiftX: 6px;
 }
 
-/* 애니 타이밍 다르게 */
-.word:nth-child(3n) {
-  animation-delay: 0.15s;
-}
-
-.word:nth-child(4n) {
-  animation-delay: 0.33s;
-}
+.word:nth-child(3n) { animation-delay: 0.15s; }
+.word:nth-child(4n) { animation-delay: 0.33s; }
 
 @keyframes floatWiggle {
   0%   { transform: var(--tilt) translate(var(--shiftX), 0); }

@@ -1,29 +1,83 @@
+// ---------------------------------------------
+// 1) SUBTITLE: Word-by-word wiggly animation
+// ---------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
 
   const text = document.getElementById("wigglyText");
   if (!text) return;
 
-  // 1) 불필요한 개행 제거 + <br> 양옆 공백 제거
+  // clean up breaks / spaces
   let cleanHTML = text.innerHTML
-    .replace(/\r?\n|\r/g, "")       // 모든 줄바꿈 제거
-    .replace(/\s*<br>\s*/g, "<br>") // br 주변 공백 제거
+    .replace(/\r?\n|\r/g, "")
+    .replace(/\s*<br>\s*/g, "<br>")
     .trim();
 
-  // 2) <br> 기준으로 라인 분리
   const lines = cleanHTML.split("<br>");
 
-  // 3) 각 라인을 단어로 분리하고 <span class="word"> 감싸기
   const processed = lines
     .map(line =>
       line
         .trim()
-        .split(/\s+/)               // 여러 칸 공백도 단어 구분자로 처리
-        .filter(word => word.length > 0) // 빈 단어 제거
+        .split(/\s+/)
+        .filter(w => w.length > 0)
         .map(word => `<span class="word">${word}</span>`)
         .join(" ")
     )
     .join("<br>");
 
-  // 4) HTML 다시 삽입
   text.innerHTML = processed;
 });
+
+// ---------------------------------------------
+// 2) WAVY GRID CANVAS
+// ---------------------------------------------
+const canvas = document.getElementById("wavyCanvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let gridSize = 40;       // 격자 간격
+let waveSpeed = 0.0015;  // 물결 속도
+let waveStrength = 6;    // 물결 세기
+
+let t = 0;
+
+function drawGrid() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = "rgba(0,0,0,0.06)";
+  ctx.lineWidth = 1;
+
+  // vertical lines
+  for (let x = 0; x < canvas.width; x += gridSize) {
+    ctx.beginPath();
+    for (let y = 0; y < canvas.height; y += 5) {
+      let offset = Math.sin((y * 0.03) + t) * waveStrength;
+      ctx.lineTo(x + offset, y);
+    }
+    ctx.stroke();
+  }
+
+  // horizontal lines
+  for (let y = 0; y < canvas.height; y += gridSize) {
+    ctx.beginPath();
+    for (let x = 0; x < canvas.width; x += 5) {
+      let offset = Math.sin((x * 0.03) + t) * waveStrength;
+      ctx.lineTo(x, y + offset);
+    }
+    ctx.stroke();
+  }
+}
+
+function animate() {
+  t += waveSpeed * 60;
+  drawGrid();
+  requestAnimationFrame(animate);
+}
+
+animate();
