@@ -27,9 +27,9 @@
 
 .fixed-line {
   position: fixed;
-  top: 60px;       /* 원하는 위치로 조정 */
+  top: 80px;       /* 원하는 위치로 조정 */
   left: 0;
-  width: 100%;
+  width: 90%;
   border: 0;
   border-top: 1px solid #000;
   z-index: 1000;   /* 다른 요소 위에 보이도록 */
