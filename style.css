@@ -97,6 +97,9 @@ body {
 #spinningTitle:hover .title {
   animation: spinFast 1s linear infinite !important;
 }
+/* 빠른 회전 */
+.spin-fast {
+  animation: spinFast 1s linear infinite !important;
 
 @keyframes spinFast {
   from { transform: rotate(0deg); }
