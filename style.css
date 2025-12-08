@@ -122,7 +122,6 @@ h1.subtitle {
 
 .word:nth-child(odd)  { --tilt: rotate(-6deg); --shiftX: -4px; }
 .word:nth-child(even) { --tilt: rotate(5deg);  --shiftX: 6px; }
-
 .word:nth-child(3n) { animation-delay: 0.15s; }
 .word:nth-child(4n) { animation-delay: 0.33s; }
 
