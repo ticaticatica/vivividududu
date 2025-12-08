@@ -57,7 +57,7 @@ body {
   display: flex;
   justify-content: flex-start;  /* 왼쪽 정렬 */
   align-items: flex-start;
-  gap: 80px;
+  /*gap: 20px;*/
   width: 100%;
   margin-top: 100px;
 }
@@ -82,6 +82,7 @@ body {
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
   margin-top: 100px;
+  margin-left: 0;
 }
 
 #spinningTitle {
