@@ -56,6 +56,7 @@ body {
   font-weight: 100;
   font-size: 22px;
   letter-spacing: 1px;
+  font-style: italic;
 
   opacity: 0.8;
   z-index: 10;        /* 캔버스 위로 올라오도록 */
