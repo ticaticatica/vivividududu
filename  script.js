@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(line =>
         line
           .trim()
-          .split(" ")
+          .split(/\s+/)     // 🔥 줄 앞·공백 문제 해결
           .map(word => `<span class="word">${word}</span>`)
           .join(" ")
       )
@@ -37,21 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------------------------------------------------
-     3) Title(Welcome to / Viddle Village) 회전 효과
-        - 기본적으로 천천히 회전
-        - 클릭하면 빠르게 회전 후 원래 상태로 복귀
+     3) 제목 회전 효과 (삭제됨 — hover로 대체됨)
   --------------------------------------------------- */
-  const spinningTitle = document.getElementById("spinningTitle");
 
-  if (spinningTitle) {
-    spinningTitle.addEventListener("click", () => {
-      // 빠르게 회전하는 클래스 추가
-      spinningTitle.classList.add("spin-fast");
-
-      // 1.5초 후 다시 느린 회전으로 복귀
-      setTimeout(() => {
-        spinningTitle.classList.remove("spin-fast");
-      }, 1500);
-    });
-  }
-});
+  // ❌ 이

@@ -40,59 +40,60 @@ body {
 }
 
 /* ----------------------------
-   제목 기본 스타일
+   wiggly 기본 제목 스타일
 ---------------------------- */
+@keyframes wiggly {
+  0%   { transform: rotate(0deg) translateY(0px); }
+  25%  { transform: rotate(1.4deg) translateY(-2px); }
+  50%  { transform: rotate(-1.4deg) translateY(3px); }
+  75%  { transform: rotate(1deg) translateY(-1px); }
+  100% { transform: rotate(0deg) translateY(0px); }
+}
+
 .title {
   font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: 4em;
   font-style: italic;
-  line-height: 1.1;
-  margin-bottom: 24px;
   display: inline-block;
-  /* wiggly 애니메이션은 제거 (transform 충돌 방지) */
+  animation: wiggly 2.4s infinite ease-in-out; /* 기본은 흔들흔들 */
 }
 
 /* ----------------------------
-   ✨ 360도 회전 애니메이션 (제목 wrapper)
+   hover 시 360도 회전
 ---------------------------- */
+
 #spinningTitle {
   display: inline-block;
-  animation: spinSlow 6s linear infinite;
   cursor: pointer;
 }
 
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#spinningTitle:hover .title {
+  animation: spinFast 1s linear infinite !important;
 }
 
-/* 클릭 시 빠르게 회전 */
-.spin-fast {
-  animation: spinFast 0.9s linear infinite !important;
-}
-
+/* 빠른 회전 */
 @keyframes spinFast {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 /* ============================================================
-   ✨✨✨ 단어(word) 단위로 흩어지고 흔들리는 애니메이션
+   ✨ 단어(word) 단위로 흩어지고 흔들리는 애니메이션
 =============================================================== */
 
 .word {
   display: inline-block;
   position: relative;
 
-  /* 단어마다 다르게 쓸 수 있는 커스텀 값들 */
+  /* 단어마다 다른 기울기/위치 변수 */
   --tilt: rotate(0deg);
   --shiftX: 0px;
 
   animation: floatWiggle 3s infinite ease-in-out;
 }
 
-/* 단어마다 기울기 + 가로 위치 다르게 */
+/* 단어마다 기울기 다르게 */
 .word:nth-of-type(odd) {
   --tilt: rotate(-6deg);
   --shiftX: -4px;
@@ -103,7 +104,7 @@ body {
   --shiftX: 6px;
 }
 
-/* 타이밍 차이 ⇒ 전체가 한 덩어리처럼 안 보임 */
+/* 타이밍 다르게 */
 .word:nth-of-type(3n) {
   animation-delay: 0.15s;
 }
@@ -112,21 +113,11 @@ body {
   animation-delay: 0.33s;
 }
 
-/* 몽글몽글 + 흩어진 느낌 애니메이션 */
+/* 몽글몽글 word wiggle */
 @keyframes floatWiggle {
-  0% {
-    transform: var(--tilt) translate(var(--shiftX), 0);
-  }
-  25% {
-    transform: var(--tilt) translate(var(--shiftX), -4px);
-  }
-  50% {
-    transform: var(--tilt) translate(var(--shiftX), 3px);
-  }
-  75% {
-    transform: var(--tilt) translate(var(--shiftX), -2px);
-  }
-  100% {
-    transform: var(--tilt) translate(var(--shiftX), 0);
-  }
+  0%   { transform: var(--tilt) translate(var(--shiftX), 0); }
+  25%  { transform: var(--tilt) translate(var(--shiftX), -4px); }
+  50%  { transform: var(--tilt) translate(var(--shiftX), 3px); }
+  75%  { transform: var(--tilt) translate(var(--shiftX), -2px); }
+  100% { transform: var(--tilt) translate(var(--shiftX), 0); }
 }
