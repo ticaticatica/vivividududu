@@ -35,23 +35,12 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 40px 40px;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* ---------------------------------------
-   TITLE + SUBTITLE 가로 배치 컨테이너
----------------------------------------- */
-.title-subtitle-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 50px;
-  width: 100%;
-  margin-top: 20px;
-}
 
 /* -----------------------------
    TOP TITLE
@@ -68,6 +57,18 @@ body {
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
+}
+
+/* ---------------------------------------
+   TITLE + SUBTITLE 가로 배치 컨테이너
+---------------------------------------- */
+.title-subtitle-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 /* -----------------------------
