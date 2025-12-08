@@ -1,4 +1,3 @@
-
 /* -----------------------------
    OPTIONAL FIXED HORIZONTAL LINE
 ------------------------------ */
@@ -17,10 +16,8 @@
 ------------------------------ */
 body {
   min-height: 100vh;
-  display: block;   /* flex 제거 */
-  justify-content: center;
-  align-items: right;
-  padding: 20px 20px;
+  display: block;
+  padding: 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
 
@@ -39,45 +36,59 @@ body {
   position: fixed;
   top: 10px;
   left: 2%;
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   font-weight: 100;
   font-style: italic;
   line-height: 1.0;
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
-  transform: translateX(0);
+  z-index: 1001;
 }
 
-/* ---------------------------------------
-   TITLE + SUBTITLE 가로 배치 컨테이너
----------------------------------------- */
+/* -----------------------------
+   TITLE + SUBTITLE 가로 배치
+------------------------------ */
 .title-subtitle-wrap {
   display: flex;
-  justify-content: flex-start;  /* 왼쪽 정렬 */
+  justify-content: flex-start;
   align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-
+/* -----------------------------
+   TITLE
+------------------------------ */
 .title {
   font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
   font-weight: 900;
-  font-size: 4em;
+  font-size: clamp(2.5em, 8vw, 4em);
   font-style: italic;
   line-height: 1;
   text-align: center;
   animation: wigglyTitle 2.4s infinite ease-in-out;
-  transform-origin: center; /* 회전 축 중앙 */
-  margin-top: 250px;
+  transform-origin: center;
+  margin-top: clamp(100px, 20vh, 250px);
   margin-left: 5%;
-  margin-right: 20%;
+  margin-right: clamp(20px, 20%, 200px);
+  will-change: transform;
+}
+
+/* wigglyTitle 애니메이션 정의 */
+@keyframes wigglyTitle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(2deg) scale(1.02); }
+  50% { transform: rotate(-2deg) scale(0.98); }
+  75% { transform: rotate(1deg) scale(1.01); }
 }
 
 #spinningTitle {
   cursor: pointer;
+  user-select: none;
 }
 
-/* hover + JS spin-fast 공통 */
+/* hover + JS spin-fast */
 #spinningTitle:hover .title,
 .spin-fast {
   animation: spinFast 1s linear infinite !important;
@@ -86,52 +97,49 @@ body {
 
 @keyframes spinFast {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* -----------------------------
    SUBTITLE
 ------------------------------ */
 .subtitle {
-  font-size: 28px;
+  font-size: clamp(18px, 4vw, 28px);
   font-weight: 100;
-  line-height: 1.0;
+  line-height: 1.4;
   text-align: right;
-  margin-right: 90px;
-  margin-top: 350px;
+  margin-right: clamp(20px, 8vw, 90px);
+  margin-top: clamp(120px, 22vh, 350px);
+}
+
+/* 성능 최적화 */
+.subtitle .line,
+.subtitle .word {
+  will-change: transform;
 }
 
 /* -----------------------------
-   LINE WIGGLE (줄 단위 애니메이션)
+   LINE WIGGLE
 ------------------------------ */
-/* 줄 wiggle */
-/*.subtitle .line {
+.subtitle .line {
   display: inline-block;
   transform-origin: center center;
-  animation: lineWiggle 3s  infinite ease-in-out;
-}*/
-
-.subtitle {
-  display: inline-block;
-  transform-origin: center center;
-  animation: lineWiggle 3s  infinite ease-in-out;
+  animation: lineWiggle 3s infinite ease-in-out;
 }
 
 @keyframes lineWiggle {
-  0%   { transform: rotate(var(--line-tilt)) translateY(0px); }
-  25%  { transform: rotate(calc(var(--line-tilt) + 23deg)) translateY(-35px); }
-  50%  { transform: rotate(calc(var(--line-tilt) - 33deg)) translateY(26px); }
-  75%  { transform: rotate(calc(var(--line-tilt) + 1.5deg)) translateY(-54px); }
-  100% { transform: rotate(var(--line-tilt)) translateY(0px); }
+  0%, 100% { transform: rotate(var(--line-tilt)) translateY(0px); }
+  25% { transform: rotate(calc(var(--line-tilt) + 15deg)) translateY(-20px); }
+  50% { transform: rotate(calc(var(--line-tilt) - 18deg)) translateY(15px); }
+  75% { transform: rotate(calc(var(--line-tilt) + 8deg)) translateY(-30px); }
 }
 
-/* hover → 줄 더 출렁이기 */
 .subtitle:hover .line {
   animation-duration: 1.4s;
 }
 
 /* -----------------------------
-   WORD WIGGLE (단어 개별 애니메이션)
+   WORD WIGGLE
 ------------------------------ */
 .subtitle .word {
   display: inline-block;
@@ -140,14 +148,13 @@ body {
 }
 
 @keyframes wordWiggle {
-  0%   { transform: translateY(0) rotate(0deg); }
-  25%  { transform: translateY(-6px) rotate(2deg); }
-  50%  { transform: translateY(8px) rotate(-3deg); }
-  75%  { transform: translateY(-5px) rotate(1deg); }
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-6px) rotate(2deg); }
+  50% { transform: translateY(8px) rotate(-3deg); }
+  75% { transform: translateY(-5px) rotate(1deg); }
   100% { transform: translateY(0) rotate(0deg); }
 }
 
-/* hover → 단어 더 강하게 */
 .subtitle:hover .word {
   animation-duration: 1.5s;
 }
@@ -163,4 +170,37 @@ body {
   opacity: 0.5;
   font-size: 12px;
   pointer-events: none;
+  z-index: 999;
+}
+
+/* -----------------------------
+   반응형
+------------------------------ */
+@media (max-width: 768px) {
+  .title-subtitle-wrap {
+    flex-direction: column;
+  }
+
+  .title {
+    margin-top: 120px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .subtitle {
+    text-align: left;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* -----------------------------
+   접근성: 애니메이션 줄이기
+------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .title,
+  .subtitle .line,
+  .subtitle .word {
+    animation: none !important;
+  }
 }
