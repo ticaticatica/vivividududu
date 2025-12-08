@@ -55,7 +55,7 @@ body {
 ---------------------------------------- */
 .title-subtitle-wrap {
   display: inline-block;
-  justify-content: space-between;
+  justify-content: left;
   align-items: flex-start;
   left:20pt;
   gap: 80px;
