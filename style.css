@@ -39,7 +39,7 @@ body {
   width: 100%;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(6px); /* Safari 대응 */
-  text-align: left;   /* 내부 전체 왼쪽 정렬 */
+  /*text-align: left;   /* 내부 전체 왼쪽 정렬 */
 }
 
 /* ================================
