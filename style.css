@@ -5,7 +5,7 @@
 ------------------------------ */
 .fixed-line {
   position: fixed;
-  top: 0px;
+  top: 1px;
   left: 0;
   width: 100%; /* 전체 가로선 보이도록 */
   border: 0;
