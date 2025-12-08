@@ -68,7 +68,7 @@ body {
   text-align: center;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center; /* 회전 축 중앙 */
-  margin-top: 300px;
+  margin-top: 250px;
   margin-left: 5%;
   margin-right: 20%;
 }
@@ -98,7 +98,7 @@ body {
   line-height: 1.0;
   text-align: right;
   margin-right: 90px;
-  margin-top: 400px;
+  margin-top: 350px;
 }
 
 /* -----------------------------
@@ -113,9 +113,9 @@ body {
 
 @keyframes lineWiggle {
   0%   { transform: rotate(var(--line-tilt)) translateY(0px); }
-  25%  { transform: rotate(calc(var(--line-tilt) + 3deg)) translateY(-5px); }
-  50%  { transform: rotate(calc(var(--line-tilt) - 3deg)) translateY(6px); }
-  75%  { transform: rotate(calc(var(--line-tilt) + 1.5deg)) translateY(-4px); }
+  25%  { transform: rotate(calc(var(--line-tilt) + 3deg)) translateY(-35px); }
+  50%  { transform: rotate(calc(var(--line-tilt) - 3deg)) translateY(26px); }
+  75%  { transform: rotate(calc(var(--line-tilt) + 1.5deg)) translateY(-54px); }
   100% { transform: rotate(var(--line-tilt)) translateY(0px); }
 }
 
