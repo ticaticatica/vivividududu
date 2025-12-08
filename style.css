@@ -13,7 +13,7 @@
 .fixed-line {
   position: fixed;
   top: 80px;
-  left: 50%;
+  left: 0;
   width: 100%;
   border: 0;
   border-top: 1px solid #000;
@@ -87,7 +87,7 @@ body {
   font-size: 4em;
   font-style: italic;
   line-height: 1;
-  margin-left: 3%
+  margin-left: 1%
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
   
