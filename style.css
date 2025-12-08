@@ -27,7 +27,7 @@
 
 .fixed-line {
   position: fixed;
-  top: 50px;       /* 원하는 위치로 조정 */
+  top: 60px;       /* 원하는 위치로 조정 */
   left: 0;
   width: 100%;
   border: 0;
@@ -83,7 +83,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 60px;
+  gap: 70px;
   width: 90%;
   margin-top: 20px;
 }
