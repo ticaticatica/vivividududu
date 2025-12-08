@@ -12,32 +12,35 @@
   <link rel="stylesheet" href="https://use.typekit.net/urt5vwi.css">
 
 <style>
-  body {
-    font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
-  }
+h1.subtitle {
+  font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
+  line-height: 1.1;
+  font-weight: 300;
+  text-align: right;
+}
 
-  h1.subtitle {
-    font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
-    line-height: 1.1;
-    font-weight: 300;
-    text-align: right;
-    animation: bounceSoft 2.2s infinite ease-in-out;
-  }
+/* 각 줄에 공통 애니메이션 */
+h1.subtitle span {
+  display: inline-block;
+  animation: bounceSoft 2.2s infinite ease-in-out;
+}
 
-  @keyframes bounceSoft {
-    0%   { transform: translateY(0); }
-    20%  { transform: translateY(-6px); }
-    40%  { transform: translateY(4px); }
-    60%  { transform: translateY(-3px); }
-    80%  { transform: translateY(2px); }
-    100% { transform: translateY(0); }
-  }
+/* 줄마다 다른 딜레이 주기 (여기서 마법이 일어남) */
+h1.subtitle span:nth-child(1) { animation-delay: 0s; }
+h1.subtitle span:nth-child(2) { animation-delay: 0.3s; }
+h1.subtitle span:nth-child(3) { animation-delay: 0.6s; }
+h1.subtitle span:nth-child(4) { animation-delay: 0.9s; }
 
-  .title {
-    font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
-    font-weight: 900;
-    font-size: 4em;
-  }
+/* 몽글몽글 점프 애니메이션 */
+@keyframes bounceSoft {
+  0%   { transform: translateY(0); }
+  20%  { transform: translateY(-6px); }
+  40%  { transform: translateY(4px); }
+  60%  { transform: translateY(-3px); }
+  80%  { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+
 </style>
 
 </head>
@@ -51,10 +54,10 @@
    Viddle Village</div>
 <br><br>
   <h1 class="subtitle">
-    Everything here goes <br>
-         viddle-viddle.<br>
-    A wiggly world <br>
-        for wiggly souls.
+    <span></span>Everything here goes</span> <br>
+          <span>viddle-viddle.</span><br>
+    <span>A wiggly world</span> <br>
+       <span> for wiggly souls.</span>
   </h1>
 <br><br><br><br>
   <div class="footer">
