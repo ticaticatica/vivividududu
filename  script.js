@@ -1,10 +1,4 @@
 
-// 설정값
-const CONFIG = {
-  TILT_RANGE: 10,
-  LINE_DELAY: 0.2,
-  WORD_DELAY: 0.1
-};
 
 document.addEventListener("DOMContentLoaded", () => {
 
