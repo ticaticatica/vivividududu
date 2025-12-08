@@ -68,6 +68,7 @@ body {
   gap: 70px;
   width: 90%;
   margin-top: 20px;
+  margin-left: 100px;
 }
 
 /* -----------------------------
@@ -113,10 +114,10 @@ body {
 ------------------------------ */
 .subtitle {
   font-size: 32px;
-  font-weight: 200;
+  font-weight: 150;
   line-height: 1.2;
   text-align: right;
-  margin-right: 40px;
+  margin-right: 90px;
 }
 
 
