@@ -79,7 +79,7 @@ body {
   font-size: 4em;
   font-style: italic;
   line-height: 1.0;
-  margin-left: -20px;  /* 살짝 왼쪽으로 당기기 */
+  /*margin-left: -20px;  살짝 왼쪽으로 당기기 */
   display: inline-block;
   animation: wigglyTitle 2.4s infinite ease-in-out;
 }
@@ -89,7 +89,7 @@ body {
   cursor: pointer;
   text-align: left;
   margin-right: auto;
-  margin-bottom: 80px; /*  간격 넉넉하게 */
+  margin-bottom: 60px; /*  간격 넉넉하게 */
 }
 
 /* hover → spin */
