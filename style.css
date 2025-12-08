@@ -48,8 +48,8 @@ body {
 ================================ */
 .top-title {
   position: fixed;
-  top: 50px;          /* 화면 상단에서 거리 */
-  left: 10%;
+  top: 10px;          /* 화면 상단에서 거리 */
+  left: 50%;
   transform: translateX(-50%);
 
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
