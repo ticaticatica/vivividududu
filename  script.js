@@ -1,8 +1,7 @@
 /* ---------------------------------------------------
-   SUBTITLE: 줄 랜덤 기울기 + 단어 wiggle
+   SUBTITLE: 줄 랜덤 기울기 + 단어 wiggle span 생성
 --------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-
   const text = document.getElementById("wigglyText");
 
   if (text) {
@@ -74,7 +73,7 @@ function drawWavyGrid() {
   ctx.strokeStyle = "rgba(0,0,0,0.2)";
   ctx.lineWidth = 1;
 
-  // 수평선
+  // Horizontal lines
   for (let y = 0; y < canvas.height; y += gridSize) {
     ctx.beginPath();
     for (let x = 0; x < canvas.width; x += 10) {
@@ -84,7 +83,7 @@ function drawWavyGrid() {
     ctx.stroke();
   }
 
-  // 수직선
+  // Vertical lines
   for (let x = 0; x < canvas.width; x += gridSize) {
     ctx.beginPath();
     for (let y = 0; y < canvas.height; y += 10) {
