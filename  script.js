@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------------------------------------------------
      WAVY GRID CANVAS
   --------------------------------------------------- */
-  const canvas = document.getElementById("wavyCanvas");
+  /*const canvas = document.getElementById("wavyCanvas");
   const ctx = canvas.getContext("2d");
 
   function resizeCanvas() {
@@ -102,6 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(drawWavyGrid);
   }
 
-  drawWavyGrid();
+  drawWavyGrid(); */
 
 }); // END DOMContentLoaded

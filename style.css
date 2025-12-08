@@ -1,47 +1,31 @@
 /* -----------------------------
    RESET
------------------------------- 
- {
+------------------------------ */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} 
+}
 
-  hr {
-  position: relative;
-  z-index: 10;
-   }*/
-
- -----------------------------
-   BACKGROUND CANVAS
+/* -----------------------------
+   OPTIONAL FIXED HORIZONTAL LINE
 ------------------------------ */
-/*#wavyCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
-} */
-
 .fixed-line {
   position: fixed;
-  top: 80px;       /* 원하는 위치로 조정 */
-  left: 40%;
+  top: 80px;
+  left: 0;
   width: 100%;
   border: 0;
   border-top: 1px solid #000;
-  z-index: 1000;   /* 다른 요소 위에 보이도록 */
+  z-index: 1000;
 }
-
 
 /* -----------------------------
    LAYOUT
 ------------------------------ */
 body {
-  display: fixed;
   min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
@@ -50,13 +34,12 @@ body {
 
 .card {
   background: rgba(255, 255, 255, 0.5);
-  padding: 40px 40px;
+  padding: 40px;
   max-width: 1000px;
   width: 100%;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
-
 
 /* -----------------------------
    TOP TITLE
@@ -65,7 +48,6 @@ body {
   position: fixed;
   top: 10px;
   left: 5%;
-  transform: translateX(-50%);
   font-size: 20px;
   font-weight: 100;
   font-style: italic;
@@ -73,7 +55,7 @@ body {
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
-  margin-left: auto;
+  transform: translateX(0);
 }
 
 /* ---------------------------------------
@@ -89,7 +71,7 @@ body {
 }
 
 /* -----------------------------
-   MAIN TITLE (Wiggly + Spin)
+   TITLE ANIMATION (Wiggly + Spin)
 ------------------------------ */
 @keyframes wigglyTitle {
   0%   { transform: rotate(0deg) translateY(0); }
@@ -106,6 +88,7 @@ body {
   font-style: italic;
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
+  transform-origin: center center; /* 회전 축 중앙 */
   margin-left: 130px;
 }
 
@@ -113,9 +96,11 @@ body {
   cursor: pointer;
 }
 
+/* hover + JS spin-fast 공통 */
 #spinningTitle:hover .title,
 .spin-fast {
   animation: spinFast 1s linear infinite !important;
+  transform-origin: center center;
 }
 
 @keyframes spinFast {
@@ -131,21 +116,18 @@ body {
   font-weight: 200;
   font-size: 30px;
   line-height: 1.2;
-  margin: 0;
   margin-right: 150px;
   flex: 1;
 }
 
 /* -----------------------------
-   LINE WIGGLE (줄 전체)
+   LINE WIGGLE (줄 단위 애니메이션)
 ------------------------------ */
-/* 기본 wiggle */
-/* LINE WIGGLE */
-
 .subtitle .line {
   display: inline-flex;
   transform-origin: center;
   margin-bottom: 10px;
+  --line-tilt: 0deg;
   animation: lineWiggle 2.2s ease-in-out infinite;
 }
 
@@ -157,8 +139,8 @@ body {
   100% { transform: rotate(var(--line-tilt)) translateY(0); }
 }
 
-/* 마우스를 올렸을 때: 확! 확! */
-.subtitle:hover.line {
+/* hover 효과 → 줄 wiggle 강하게 */
+.subtitle:hover .line {
   animation: lineWiggleStrong 0.8s ease-in-out infinite;
 }
 
@@ -171,10 +153,8 @@ body {
 }
 
 /* -----------------------------
-   WORD WIGGLE (단어 개별)
+   WORD WIGGLE (단어 개별 애니메이션)
 ------------------------------ */
-/* 기본 단어 움직임 */
-/* WORD WIGGLE */
 .subtitle .word {
   display: inline-block;
   animation: wordFloat 2.6s ease-in-out infinite;
@@ -188,8 +168,8 @@ body {
   100% { transform: translateY(0) rotate(0deg); }
 }
 
-/* hover → 확확! */
-.subtitle:hover.word {
+/* hover → 단어 애니메이션 강화 */
+.subtitle:hover .word {
   animation: wordFloatStrong 0.6s ease-in-out infinite;
 }
 
@@ -213,5 +193,3 @@ body {
   font-size: 12px;
   pointer-events: none;
 }
-
-
