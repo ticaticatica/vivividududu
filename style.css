@@ -138,9 +138,9 @@ h1.subtitle {
 
 @keyframes floatWiggle {
   0%   { transform: var(--tilt) translate(var(--shiftX), 0); }
-  25%  { transform: var(--tilt) translate(var(--shiftX), -4px); }
-  50%  { transform: var(--tilt) translate(var(--shiftX), 3px); }
-  75%  { transform: var(--tilt) translate(var(--shiftX), -2px); }
+  25%  { transform: var(--tilt) translate(var(--shiftX), -10px); }
+  50%  { transform: var(--tilt) translate(var(--shiftX), 30px); }
+  75%  { transform: var(--tilt) translate(var(--shiftX), -20px); }
   100% { transform: var(--tilt) translate(var(--shiftX), 0); }
 }
 
