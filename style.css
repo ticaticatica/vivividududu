@@ -36,12 +36,32 @@ body {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.5);
   padding: 32px 28px;
   max-width: 640px;
   width: 100%;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
+
+/* ================================
+   TOP TITLE (Experimental Doodle Space)
+================================ */
+.top-title {
+  position: fixed;
+  top: 28px;          /* 화면 상단에서 거리 */
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
+  font-weight: 100;
+  font-size: 22px;
+  letter-spacing: 1px;
+
+  opacity: 0.8;
+  z-index: 10;        /* 캔버스 위로 올라오도록 */
+  pointer-events: none; /* 클릭 간섭 없음 */
+}
+
 
 /* -----------------------------
    TITLE ANIMATION
@@ -86,8 +106,8 @@ body {
 ------------------------------ */
 
 h1.subtitle {
-  line-height: 1.1 !important;
-  font-weight: 300;
+  line-height: 1.0 !important;
+  font-weight: 250;
   text-align: right;
 }
 
