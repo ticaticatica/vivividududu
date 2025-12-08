@@ -1,19 +1,21 @@
 /* ---------------------------------------------------
-   WORD WRAP FOR SUBTITLE
+   WORD WRAP FOR SUBTITLE (고정 버전)
 --------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
   const text = document.getElementById("wigglyText");
 
   if (text) {
-    // HTML 공백 정리
+    // 1) <br> 전후 공백 제거 + 개행 제거
     let cleanHTML = text.innerHTML
-      .replace(/\r?\n|\r/g, "")
-      .replace(/\s*<br>\s*/g, "<br>")
+      .replace(/\r?\n|\r/g, "")        // 모든 개행 제거
+      .replace(/\s*<br>\s*/g, "<br>")  // br 앞뒤 공백 제거
       .trim();
 
+    // 2) <br> 기준으로 줄 분리
     const lines = cleanHTML.split("<br>");
 
+    // 3) 각 단어 span화
     const processed = lines
       .map(line =>
         line
@@ -22,8 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
           .map(word => `<span class="word">${word}</span>`)
           .join(" ")
       )
-      .join("<br>");
+      .join("<br>"); // 다시 줄 합치기
 
+    // 4) HTML 갱신
     text.innerHTML = processed;
   }
 });
