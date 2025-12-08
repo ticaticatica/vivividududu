@@ -50,10 +50,9 @@ body {
   align-items: center;
   gap: 4vh;
   width: 100%;
-  margin-top: 12vh;
+  margin-top: 11vh;
   text-align: center;
 }
-
 
 /* -----------------------------
    TITLE ANIMATION (Wiggly + Spin)
@@ -68,8 +67,8 @@ body {
 
 .title {
   font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
-  font-weight: 900;
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  font-size: clamp(3rem, 8vw, 5rem);
   font-style: italic;
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
@@ -80,11 +79,12 @@ body {
 }
 
 
-
 /* Hover spin */
 .title:hover {
   animation: spinFast 1s linear infinite !important;
 }
+
+
 
 /* ---------------------------------------
    SUBTITLE (line wiggle independent)
@@ -99,6 +99,8 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
+
 
 /* Line wiggle uses ONLY translate for no conflict */
 @keyframes subtleWiggle {
@@ -115,7 +117,7 @@ body {
 
 /* Hover spin */
 .subtitle:hover {
-  animation: spinFast 1s linear infinite !important;
+  animation: rubberBand 0.7s ease !important;
 }
 
 /* ---------------------------------------
@@ -124,6 +126,18 @@ body {
 @keyframes spinFast {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+/* ---------------------------------------
+  skewave ANIMATION
+---------------------------------------- */
+
+@keyframes rubberBand {
+  0%   { transform: scale3d(1,1,1); }
+  30%  { transform: scale3d(1.25,0.75,1); }
+  40%  { transform: scale3d(0.75,1.25,1); }
+  50%  { transform: scale3d(1.15,0.85,1); }
+  65%  { transform: scale3d(0.95,1.05,1); }
+  100% { transform: scale3d(1,1,1); }
 }
 
 /* ---------------------------------------
