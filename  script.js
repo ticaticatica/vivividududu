@@ -1,16 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* -----------------------------
-     SUBTITLE: 줄 분석 + 단어 재구성
-  ------------------------------ */
   const text = document.getElementById("wigglyText");
 
   if (text) {
-    const raw = text.innerText;
-    const lines = raw.split(/\r?\n/).filter(l => l.trim() !== "");
+    // 1) HTML에서 <br>을 특별한 구분자로 치환
+    let raw = text.innerHTML
+      .replace(/<br\s*\/?>/gi, "__BR__")
+      .replace(/\r?\n|\r/g, "__BR__");
 
+    // 2) 구분자를 기준으로 줄 분리
+    const lines = raw.split("__BR__").filter(l => l.trim() !== "");
+
+    // 3) 줄 → 단어 → span 변환
     const processed = lines.map(line => {
-      const angle = (Math.random() * 10 - 5).toFixed(2); // -5~+5도
+      const angle = (Math.random() * 10 - 5).toFixed(2);
+
       const words = line.trim().split(/\s+/);
       const wordHTML = words
         .map(w => `<span class="word">${w}</span>`)
@@ -21,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     text.innerHTML = processed;
   }
+});
+
 
   /* -----------------------------
      TITLE HOVER SPIN
