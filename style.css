@@ -4,7 +4,7 @@
 ------------------------------ */
 .fixed-line {
   position: fixed;
-  top: 80px;
+  top: 60px;
   left: 0;
   width: 100%; /* 전체 가로선 보이도록 */
   border: 0;
@@ -19,7 +19,6 @@ body {
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
   display: flex;
 }
-
 
 /* -----------------------------
    TOP TITLE
