@@ -109,7 +109,7 @@ h1.subtitle {
   line-height: 1.1 !important;
   font-weight: 250;
   text-align: right;
-  font-size: 22px;
+  font-size: 40px;
 }
 
 .word {
@@ -136,9 +136,10 @@ h1.subtitle {
 
 .footer {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 20px;  /* 화면 아래에서 20px */
+  left: 50%;  /* 화면의 가운데 */
+  transform: translateX(-50%); /* 자기 너비의 절반만 왼쪽으로 당겨서 정확한 중앙 */
   font-size: 14px;
-  opacity: 0.5;
+  /*opacity: 0.9;*/
   pointer-events: none;
 }
