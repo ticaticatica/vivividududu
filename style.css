@@ -35,7 +35,7 @@ body {
   font-size: 1.2rem;
   font-weight: 100;
   font-style: italic;
-  line-height: 1.1;
+  line-height: 1.0;
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
@@ -50,7 +50,7 @@ body {
   align-items: center;
   gap: 4vh;
   width: 100%;
-  margin-top: 10vh;
+  margin-top: 9vh;
   text-align: center;
 }
 
@@ -90,7 +90,7 @@ body {
    SUBTITLE (line wiggle independent)
 ---------------------------------------- */
 .subtitle {
-  font-size: clamp(1.1rem, 1vw, 1.1rem);
+  font-size: clamp(1.2rem, 1vw, 1.2rem);
   font-weight: 150;
   line-height: 1.0;
   display: flex;
