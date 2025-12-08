@@ -121,37 +121,66 @@ body {
 /* -----------------------------
    LINE WIGGLE (줄 전체)
 ------------------------------ */
+/* 기본 wiggle */
 .line {
   display: inline-block;
   transform-origin: center;
-  animation: lineWiggle 1.6s ease-in-out infinite;
+  margin-bottom: 10px;
+  animation: lineWiggle 2.2s ease-in-out infinite;
+  transition: animation 0.2s ease;
 }
 
 @keyframes lineWiggle {
-   0%   { transform: rotate(var(--line-tilt)) translateY(0); }
-  20%  { transform: rotate(calc(var(--line-tilt) + 6deg)) translateY(-20px); }
-  50%  { transform: rotate(calc(var(--line-tilt) - 6deg)) translateY(25px); }
-  80%  { transform: rotate(calc(var(--line-tilt) + 4deg)) translateY(-18px); }
+  0%   { transform: rotate(var(--line-tilt)) translateY(0); }
+  25%  { transform: rotate(calc(var(--line-tilt) + 3deg)) translateY(-10px); }
+  50%  { transform: rotate(calc(var(--line-tilt) - 3deg)) translateY(12px); }
+  75%  { transform: rotate(calc(var(--line-tilt) + 2deg)) translateY(-8px); }
   100% { transform: rotate(var(--line-tilt)) translateY(0); }
 }
 
+/* 마우스를 올렸을 때: 확! 확! */
+.subtitle:hover .line {
+  animation: lineWiggleStrong 0.8s ease-in-out infinite;
+}
+
+@keyframes lineWiggleStrong {
+  0%   { transform: rotate(var(--line-tilt)) translateY(0); }
+  25%  { transform: rotate(calc(var(--line-tilt) + 12deg)) translateY(-30px); }
+  50%  { transform: rotate(calc(var(--line-tilt) - 12deg)) translateY(35px); }
+  75%  { transform: rotate(calc(var(--line-tilt) + 8deg)) translateY(-25px); }
+  100% { transform: rotate(var(--line-tilt)) translateY(0); }
+}
 
 /* -----------------------------
    WORD WIGGLE (단어 개별)
 ------------------------------ */
+/* 기본 단어 움직임 */
 .word {
   display: inline-block;
-  animation: wordFloat 1.4s ease-in-out infinite;
+  animation: wordFloat 2.6s ease-in-out infinite;
+  transition: animation 0.2s ease;
 }
 
 @keyframes wordFloat {
   0%   { transform: translateY(0) rotate(0deg); }
-  25%  { transform: translateY(-30px) rotate(4deg); }
-  50%  { transform: translateY(35px) rotate(-6deg); }
-  75%  { transform: translateY(-25px) rotate(3deg); }
+  25%  { transform: translateY(-8px) rotate(2deg); }
+  50%  { transform: translateY(10px) rotate(-3deg); }
+  75%  { transform: translateY(-6px) rotate(1deg); }
   100% { transform: translateY(0) rotate(0deg); }
 }
 
+/* 마우스를 올리면 확확 움직임 */
+.subtitle:hover .word {
+  animation: wordFloatStrong 0.7s ease-in-out infinite;
+}
+
+@keyframes wordFloatStrong {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-25px) rotate(8deg); }
+  50%  { transform: translateY(30px) rotate(-10deg); }
+  75%  { transform: translateY(-18px) rotate(6deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
 /* -----------------------------
    FOOTER
 ------------------------------ */
