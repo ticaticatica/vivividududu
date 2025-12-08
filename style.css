@@ -1,15 +1,15 @@
-/* ----------------------------
-   전체 초기화
----------------------------- */
+/* ----------------------------------------
+   RESET
+---------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ----------------------------
-   배경 + 전체 레이아웃
----------------------------- */
+/* ----------------------------------------
+   BACKGROUND + WAVY GRID
+---------------------------------------- */
 body {
   min-height: 100vh;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
@@ -21,17 +21,28 @@ body {
   align-items: center;
   padding: 40px 20px;
 
+  /* 배경 격자 */
   background-image:
     linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px);
   background-size: 40px 40px;
- /*곡선효과*/
+
+  /* SVG 필터 적용 */
   filter: url(#wavyGrid);
+
+  /* 🔥 배경 wavy 애니메이션 */
+  animation: waveMove 6s ease-in-out infinite;
 }
 
-/* ----------------------------
-   카드
----------------------------- */
+@keyframes waveMove {
+  0%   { filter: url(#wavyGrid); }
+  50%  { filter: url(#wavyGridStrong); } 
+  100% { filter: url(#wavyGrid); }
+}
+
+/* ----------------------------------------
+   CARD
+---------------------------------------- */
 .card {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 32px 28px;
@@ -40,11 +51,10 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* ----------------------------
-   제목 기본 wiggly 효과
----------------------------- */
-
-@keyframes wiggly {
+/* ----------------------------------------
+   TITLE (Wiggly 기본)
+---------------------------------------- */
+@keyframes wigglyTitle {
   0%   { transform: rotate(0deg) translateY(0px); }
   25%  { transform: rotate(1.4deg) translateY(-2px); }
   50%  { transform: rotate(-1.4deg) translateY(3px); }
@@ -57,13 +67,14 @@ body {
   font-weight: 900;
   font-size: 4em;
   font-style: italic;
+  line-height: 1.1;
   display: inline-block;
-  animation: wiggly 2.4s infinite ease-in-out;
+  animation: wigglyTitle 2.4s infinite ease-in-out;
 }
 
-/* ----------------------------
-   hover 시 spinFast로 전환
----------------------------- */
+/* ----------------------------------------
+   TITLE — Hover 시 spinFast로 변경
+---------------------------------------- */
 #spinningTitle {
   display: inline-block;
   cursor: pointer;
@@ -78,14 +89,14 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* ============================================================
-   WORD ANIMATION — 단어가 흩어지고 wiggle
-=============================================================== */
+/* ----------------------------------------
+   WORD ANIMATION (Subtitle)
+---------------------------------------- */
 
-/* 👉 줄 전체를 감싸는 line wrapper 스타일 */
+/* 각 줄 wrapper */
 .line {
   display: block;
-  margin-bottom: 6px;  /* ← 줄 간격 조절 (원하면 더 키우거나 줄여도 됨) */
+  margin-bottom: 6px;
 }
 
 .word {
@@ -98,7 +109,7 @@ body {
   animation: floatWiggle 3s infinite ease-in-out;
 }
 
-/* 기울기 & 위치 랜덤 느낌 */
+/* 랜덤한 느낌 만들기 */
 .word:nth-child(odd) {
   --tilt: rotate(-6deg);
   --shiftX: -4px;
@@ -109,7 +120,7 @@ body {
   --shiftX: 6px;
 }
 
-/* 타이밍 다양화 */
+/* 애니 타이밍 다르게 */
 .word:nth-child(3n) {
   animation-delay: 0.15s;
 }
