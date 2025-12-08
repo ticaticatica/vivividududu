@@ -16,7 +16,6 @@
 ------------------------------ */
 body {
   min-height: 100vh;
-  padding: 0 5vw;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
   display: flex;
   flex-direction: column;
