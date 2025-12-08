@@ -105,7 +105,13 @@ body {
    LINE WIGGLE (줄 단위 애니메이션)
 ------------------------------ */
 /* 줄 wiggle */
-.subtitle .line {
+/*.subtitle .line {
+  display: inline-block;
+  transform-origin: center center;
+  animation: lineWiggle 3s  infinite ease-in-out;
+}*/
+
+.subtitle {
   display: inline-block;
   transform-origin: center center;
   animation: lineWiggle 3s  infinite ease-in-out;
