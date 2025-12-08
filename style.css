@@ -57,7 +57,7 @@ body {
   display: flex;
   justify-content: flex-start;  /* 왼쪽 정렬 */
   align-items: flex-start;
-  gap: 90px;
+  gap: 120px;
   width: 100%;
   margin-top: 100px;
 }
