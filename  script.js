@@ -5,32 +5,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const text = document.getElementById("wigglyText");
 
-if (text) {
-  let cleanHTML = text.innerHTML
-    .replace(/\r?\n|\r/g, "")
-    .replace(/<br\s*\/?>/gi, "<br>")
-    .trim();
+  if (text) {
+    let cleanHTML = text.innerHTML
+      .replace(/\r?\n|\r/g, "")
+      .replace(/<br\s*\/?>/gi, "<br>")
+      .trim();
 
-  const lines = cleanHTML.split("<br>");
+    const lines = cleanHTML.split("<br>");
 
-  const processed = lines
-    .map(line => {
-      const angle = (Math.random() * 10 - 5).toFixed(2); // -5 ~ +5 more visible
-      return `
-        <span class="line" style="--line-tilt:${angle}deg;">
-          ${line
-            .trim()
-            .split(/\s+/)
-            .map(word => `<span class="word">${word}</span>`)
-            .join(" ")
-          }
-        </span>
-      `;
-    })
-    .join("<br>");
+    const processed = lines
+      .map(line => {
+        const angle = (Math.random() * 10 - 5).toFixed(2); // -5 ~ +5deg
+        return `
+          <span class="line" style="--line-tilt:${angle}deg;">
+            ${line
+              .trim()
+              .split(/\s+/)
+              .map(word => `<span class="word">${word}</span>`)
+              .join(" ")
+            }
+          </span>
+        `;
+      })
+      .join("<br>");
 
-  text.innerHTML = processed;
-}
+    text.innerHTML = processed;
+  }
 
   /* ---------------------------------------------------
      TITLE HOVER SPIN
@@ -38,13 +38,15 @@ if (text) {
   const spinningTitle = document.getElementById("spinningTitle");
   const titleElement = spinningTitle?.querySelector(".title");
 
-  spinningTitle.addEventListener("mouseenter", () => {
-    titleElement.classList.add("spin-fast");
-  });
+  if (spinningTitle && titleElement) {
+    spinningTitle.addEventListener("mouseenter", () => {
+      titleElement.classList.add("spin-fast");
+    });
 
-  spinningTitle.addEventListener("mouseleave", () => {
-    titleElement.classList.remove("spin-fast");
-  });
+    spinningTitle.addEventListener("mouseleave", () => {
+      titleElement.classList.remove("spin-fast");
+    });
+  }
 });
 
 /* ---------------------------------------------------
@@ -72,6 +74,7 @@ function drawWavyGrid() {
   ctx.strokeStyle = "rgba(0,0,0,0.2)";
   ctx.lineWidth = 1;
 
+  // 수평선
   for (let y = 0; y < canvas.height; y += gridSize) {
     ctx.beginPath();
     for (let x = 0; x < canvas.width; x += 10) {
@@ -81,6 +84,7 @@ function drawWavyGrid() {
     ctx.stroke();
   }
 
+  // 수직선
   for (let x = 0; x < canvas.width; x += gridSize) {
     ctx.beginPath();
     for (let y = 0; y < canvas.height; y += 10) {
@@ -95,5 +99,3 @@ function drawWavyGrid() {
 }
 
 drawWavyGrid();
-
-// END DOMContentLoaded
