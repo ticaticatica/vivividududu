@@ -1,6 +1,6 @@
 /* -----------------------------
    RESET
------------------------------- */
+------------------------------ 
  {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@
   hr {
   position: relative;
   z-index: 10;
-   }
+   }*/
 
  -----------------------------
    BACKGROUND CANVAS
@@ -27,7 +27,7 @@
 
 .fixed-line {
   position: fixed;
-  top: 60px;       /* 원하는 위치로 조정 */
+  top: 50px;       /* 원하는 위치로 조정 */
   left: 0;
   width: 100%;
   border: 0;
