@@ -1,6 +1,3 @@
-/* ---------------------------------------------------
-   DOM READY – ALL JS HERE
---------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------------------------------------------------
@@ -10,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (text) {
     let cleanHTML = text.innerHTML
-      .replace(/\r?\n|\r/g, "")
-      .replace(/<br\s*\/?>/gi, "<br>")
+      .replace(/\r?\n|\r/g, "")           // 개행 제거
+      .replace(/<br\s*\/?>/gi, "<br>")     // 다양한 <br> 정규화
       .trim();
 
-    const lines = cleanHTML.split("<br>");
+    const lines = cleanHTML.split("<br>").filter(line => line.trim() !== "");
 
     const processed = lines
       .map(line => {
@@ -25,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
               .trim()
               .split(/\s+/)
               .map(word => `<span class="word">${word}</span>`)
-              .join(" ")
-            }
+              .join(" ")}
           </span>
         `;
       })
@@ -51,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       titleElement.classList.remove("spin-fast");
     });
   }
+});
 
 
   /* ---------------------------------------------------
