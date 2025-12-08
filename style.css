@@ -39,7 +39,7 @@ body {
 .top-title {
   position: fixed;
   top: 10px;
-  left: 2%;
+  left: 0;
   font-size: 20px;
   font-weight: 100;
   font-style: italic;
@@ -57,7 +57,7 @@ body {
   display: inline-block;
   justify-content: left;
   align-items: flex-start;
-  left:20pt;
+  left:10pt;
   gap: 80px;
   width: 100%;
   margin-top: 100px;
@@ -82,7 +82,7 @@ body {
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
-  margin-left: 150px;
+  margin-left: 20px;
   margin-top: 100px;
 }
 
