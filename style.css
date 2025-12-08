@@ -59,7 +59,7 @@ body {
   font-style: italic;
 
 
-  opacity: 0.8;
+  opacity: none;
   z-index: 10;        /* 캔버스 위로 올라오도록 */
   pointer-events: none; /* 클릭 간섭 없음 */
 }
