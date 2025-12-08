@@ -46,6 +46,7 @@ body {
   pointer-events: none;
   letter-spacing: 1px;
   transform: translateX(0);
+  margin-left: 2%;
 }
 
 /* ---------------------------------------
