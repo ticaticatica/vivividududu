@@ -81,7 +81,7 @@ body {
   font-style: italic;
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
-  transform-origin: center center; /* 회전 축 중앙 */
+  transform-origin: center; /* 회전 축 중앙 */
   margin-left: 150px;
   margin-top: 100px;
 }
