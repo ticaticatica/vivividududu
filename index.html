@@ -27,27 +27,6 @@
       font-weight: 900;
       font-size: 4em;
     }
-
-    /* ✨ 단어에 적용되는 wiggle 스타일 */
-    .word {
-      display: inline-block;
-      position: relative;
-      animation: floatWiggle 3s infinite ease-in-out;
-    }
-
-    /* 단어마다 위치/기울기를 불규칙하게 만들기 */
-    .word:nth-child(odd) { transform: rotate(-4deg) translateY(2px); }
-    .word:nth-child(even) { transform: rotate(5deg) translateY(-3px); }
-    .word:nth-child(3n) { transform: rotate(-2deg) translateX(-4px); }
-    .word:nth-child(4n) { transform: rotate(7deg) translateX(6px); }
-
-    @keyframes floatWiggle {
-      0% { transform: translateY(0) rotate(0deg); }
-      25% { transform: translateY(-4px) rotate(1deg); }
-      50% { transform: translateY(3px) rotate(-1deg); }
-      75% { transform: translateY(-2px) rotate(1deg); }
-      100% { transform: translateY(0) rotate(0deg); }
-    }
   </style>
 </head>
 
