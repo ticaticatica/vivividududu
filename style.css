@@ -3,14 +3,16 @@
 /* -----------------------------
    OPTIONAL FIXED HORIZONTAL LINE
 ------------------------------ */
-.fixed-line {
+.fixed-line-strong {
   position: fixed;
-  top: 1px;
+  top: 0;
   left: 0;
-  width: 100%; /* 전체 가로선 보이도록 */
+  width: 100%;
   border: 0;
   border-top: 5px solid #000;
+  z-index: 2000;
 }
+
 
 /* -----------------------------
    OPTIONAL FIXED HORIZONTAL LINE
