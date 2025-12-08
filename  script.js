@@ -85,4 +85,3 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Animation error:", e.message);
   });
 });
-```
