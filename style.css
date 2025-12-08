@@ -116,7 +116,7 @@ body {
   font-size: 30px;
   line-height: 1.2;
   margin: 0;
-  margin-right: 130px;
+  margin-right: 150px;
   flex: 1;
 }
 
@@ -126,7 +126,7 @@ body {
 /* 기본 wiggle */
 /* LINE WIGGLE */
 .subtitle .line {
-  display: inline-block;
+  display: inline-flex;
   transform-origin: center;
   margin-bottom: 10px;
   animation: lineWiggle 2.2s ease-in-out infinite;
@@ -134,9 +134,9 @@ body {
 
 @keyframes lineWiggle {
   0%   { transform: rotate(var(--line-tilt)) translateY(0); }
-  25%  { transform: rotate(calc(var(--line-tilt) + 3deg)) translateY(-10px); }
-  50%  { transform: rotate(calc(var(--line-tilt) - 3deg)) translateY(12px); }
-  75%  { transform: rotate(calc(var(--line-tilt) + 2deg)) translateY(-8px); }
+  25%  { transform: rotate(calc(var(--line-tilt) + 3deg)) translateY(-30px); }
+  50%  { transform: rotate(calc(var(--line-tilt) - 3deg)) translateY(42px); }
+  75%  { transform: rotate(calc(var(--line-tilt) + 2deg)) translateY(-20px); }
   100% { transform: rotate(var(--line-tilt)) translateY(0); }
 }
 
