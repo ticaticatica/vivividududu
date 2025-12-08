@@ -42,6 +42,7 @@ body {
 ---------------------------------------- */
 .title-subtitle-wrap {
   display: flex;
+  top: 30px;
   gap: 4vh;
   width: 100%;
   text-align: center;
