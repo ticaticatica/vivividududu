@@ -65,8 +65,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 100px;
-  width: 100%;
+  gap: 90px;
+  width: 90%;
   margin-top: 20px;
 }
 
@@ -82,12 +82,12 @@ body {
 }
 
 .title {
-
   font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
   font-weight: 900;
   font-size: 4em;
   font-style: italic;
   line-height: 1;
+  margin-left: 5%
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
   
