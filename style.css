@@ -4,7 +4,7 @@
 ------------------------------ */
 .fixed-line {
   position: fixed;
-  top: 80px;
+  margin-top: 80px;
   left: 0;
   border: 0;
   border-top: 1px solid #000;
@@ -68,7 +68,7 @@ body {
   cursor: pointer;
   text-align: center;
   transition: transform 0.3s ease;
-   margin-top: 30%
+   margin-top: 20%
 }
 
 /* -----------------------------
