@@ -16,9 +16,14 @@
 ------------------------------ */
 body {
   min-height: 100vh;
-  padding: 10px 10px;
+  padding: 0 5vw;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 /* -----------------------------
    TOP TITLE
@@ -26,28 +31,29 @@ body {
 .top-title {
   position: fixed;
   top: 10px;
-  left: 0;
-  font-size: 20px;
+  left: 2vw;
+  font-size: 1.2rem;
   font-weight: 100;
   font-style: italic;
   line-height: 1.1;
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
-  transform: translateX(0);
-  margin-left: 2%;
 }
 
 /* ---------------------------------------
    TITLE + SUBTITLE 가로 배치 컨테이너
 ---------------------------------------- */
 .title-subtitle-wrap {
-  justify-content: left;
-  align-items: left;
-  gap: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 12vh;
+  text-align: center;
 }
+
 
 /* -----------------------------
    TITLE ANIMATION (Wiggly + Spin)
@@ -63,88 +69,84 @@ body {
 .title {
   font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
   font-weight: 900;
-  font-size: 5em;
+  font-size: clamp(3rem, 8vw, 6rem);
   font-style: italic;
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
-  margin-left: 5%;
-  margin-right: 30%;
-  margin-top: 15%;
+  cursor: pointer;
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
-#spinningTitle {
-  cursor: pointer;
-}
 
-/* hover + JS spin-fast 공통 */
-#spinningTitle:hover .title,
-.spin-fast {
+
+/* Hover spin */
+.title:hover {
   animation: spinFast 1s linear infinite !important;
-  transform-origin: center center;
 }
 
-@keyframes spinFast {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* -----------------------------
-   SUBTITLE
------------------------------- */
+/* ---------------------------------------
+   SUBTITLE (line wiggle independent)
+---------------------------------------- */
 .subtitle {
-  font-size: 28px;
-  font-weight: 100;
-  line-height: 1.0;
-  text-align: right;
-  margin-right: 90px;
-  margin-top: 300px;
-}
-
-/* -----------------------------
-   LINE WIGGLE (줄 단위 애니메이션)
------------------------------- */
-/* 줄 wiggle */
-.subtitle .line {
-  transform-origin: center center;
-  animation: lineWiggle 3s ease-in-out infinite ;
-}
-
-@keyframes lineWiggle {
-  0%   { transform: rotate(0deg) translateY(0); }
-  25%  { transform: rotate(1.4deg) translateY(-2px); }
-  50%  { transform: rotate(-1.4deg) translateY(3px); }
-  75%  { transform: rotate(1deg) translateY(-1px); }
-  100% { transform: rotate(0deg) translateY(0); }
-}
-
-/* hover + JS spin-fast 공통 */
-#spinningsubtitle:hover .subtitle,
-.spin-fast {
-  animation: spinFast 1s linear infinite !important;
-  transform-origin: center center;
-}
-
-#spinningsubtitle {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 200;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+/* Line wiggle uses ONLY translate for no conflict */
+@keyframes subtleWiggle {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-2px); }
+  50%  { transform: translateY(3px); }
+  75%  { transform: translateY(-1px); }
+  100% { transform: translateY(0); }
+}
+
+.subtitle .line {
+  animation: subtleWiggle 3s ease-in-out infinite;
+}
+
+/* Hover spin */
+.subtitle:hover {
+  animation: spinFast 1s linear infinite !important;
+}
+
+/* ---------------------------------------
+   FULL ROTATION ANIMATION
+---------------------------------------- */
 @keyframes spinFast {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
 
+/* ---------------------------------------
+   OPTIONAL FIXED HORIZONTAL LINE
+---------------------------------------- */
+.fixed-line {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #000;
+  z-index: 50;
+}
 
-/* -----------------------------
+/* ---------------------------------------
    FOOTER
------------------------------- */
+---------------------------------------- */
 .footer {
   position: fixed;
-  bottom: 10px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0.5;
   font-size: 12px;
+  opacity: 0.5;
   pointer-events: none;
-}  
+}
