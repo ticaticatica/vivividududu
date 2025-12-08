@@ -140,6 +140,6 @@ h1.subtitle {
   left: 50%;  /* 화면의 가운데 */
   transform: translateX(-50%); /* 자기 너비의 절반만 왼쪽으로 당겨서 정확한 중앙 */
   font-size: 14px;
-  /*opacity: 0.9;*/
+  opacity: 0.7;
   pointer-events: none;
 }
