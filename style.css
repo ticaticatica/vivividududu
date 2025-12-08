@@ -18,6 +18,10 @@
 body {
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
   display: flex;
+  flex-direction: column;   /*  핵심! 세로 방향 정렬 */
+  align-items: center;      /* 가운데 정렬 optional */
+}
+
 }
 
 /* -----------------------------
@@ -47,7 +51,7 @@ body {
   width: 100%;
   text-align: center;
 
-  margin-top: 10vh; /* 완벽한 sweet spot */
+  margin-top: 8vh; /* 완벽한 sweet spot */
 }
 
 /* ---------------------------------------
