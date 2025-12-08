@@ -1,8 +1,11 @@
 /* ---------------------------------------------------
-   SUBTITLE: 줄 랜덤 기울기 + 단어 wiggle span 생성
+   DOM READY – ALL JS HERE
 --------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* ---------------------------------------------------
+     SUBTITLE: 줄 랜덤 기울기 + 단어 wiggle
+  --------------------------------------------------- */
   const text = document.getElementById("wigglyText");
 
   if (text) {
@@ -15,14 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const processed = lines
       .map(line => {
-        const angle = (Math.random() * 12 - 6).toFixed(2); // 더 과격!
+        const angle = (Math.random() * 10 - 5).toFixed(2); // -5 ~ +5deg
         return `
           <span class="line" style="--line-tilt:${angle}deg;">
             ${line
               .trim()
               .split(/\s+/)
               .map(word => `<span class="word">${word}</span>`)
-              .join(" ")}
+              .join(" ")
+            }
           </span>
         `;
       })
@@ -31,8 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     text.innerHTML = processed;
   }
 
+
   /* ---------------------------------------------------
-     TITLE HOVER SPIN (정상작동)
+     TITLE HOVER SPIN
   --------------------------------------------------- */
   const spinningTitle = document.getElementById("spinningTitle");
   const titleElement = spinningTitle?.querySelector(".title");
@@ -47,57 +52,56 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-});
-/* ← 여기서 딱 한 번만 닫힘 */
 
+  /* ---------------------------------------------------
+     WAVY GRID CANVAS
+  --------------------------------------------------- */
+  const canvas = document.getElementById("wavyCanvas");
+  const ctx = canvas.getContext("2d");
 
-/* ---------------------------------------------------
-   WAVY GRID CANVAS (정상)
---------------------------------------------------- */
-const canvas = document.getElementById("wavyCanvas");
-const ctx = canvas.getContext("2d");
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+  let t = 0;
 
-let t = 0;
+  function drawWavyGrid() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-function drawWavyGrid() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const gridSize = 40;
+    const waveStrength = 12;
+    const speed = 0.003;
 
-  const gridSize = 40;
-  const waveStrength = 12;
-  const speed = 0.003;
+    ctx.strokeStyle = "rgba(0,0,0,0.2)";
+    ctx.lineWidth = 1;
 
-  ctx.strokeStyle = "rgba(0,0,0,0.2)";
-  ctx.lineWidth = 1;
-
-  // Horizontal lines
-  for (let y = 0; y < canvas.height; y += gridSize) {
-    ctx.beginPath();
-    for (let x = 0; x < canvas.width; x += 10) {
-      const wave = Math.sin((x * 0.02) + (t * 2)) * waveStrength;
-      ctx.lineTo(x, y + wave);
+    // Horizontal lines
+    for (let y = 0; y < canvas.height; y += gridSize) {
+      ctx.beginPath();
+      for (let x = 0; x < canvas.width; x += 10) {
+        const wave = Math.sin((x * 0.02) + (t * 2)) * waveStrength;
+        ctx.lineTo(x, y + wave);
+      }
+      ctx.stroke();
     }
-    ctx.stroke();
+
+    // Vertical lines
+    for (let x = 0; x < canvas.width; x += gridSize) {
+      ctx.beginPath();
+      for (let y = 0; y < canvas.height; y += 10) {
+        const wave = Math.sin((y * 0.02) + (t * 2)) * waveStrength;
+        ctx.lineTo(x + wave, y);
+      }
+      ctx.stroke();
+    }
+
+    t += speed;
+    requestAnimationFrame(drawWavyGrid);
   }
 
-  // Vertical lines
-  for (let x = 0; x < canvas.width; x += gridSize) {
-    ctx.beginPath();
-    for (let y = 0; y < canvas.height; y += 10) {
-      const wave = Math.sin((y * 0.02) + (t * 2)) * waveStrength;
-      ctx.lineTo(x + wave, y);
-    }
-    ctx.stroke();
-  }
+  drawWavyGrid();
 
-  t += speed;
-  requestAnimationFrame(drawWavyGrid);
-}
-
-drawWavyGrid();
+}); // END DOMContentLoaded
