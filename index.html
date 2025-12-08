@@ -5,16 +5,24 @@
   <title>My Grid Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- CSS, Fonts -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.typekit.net/urt5vwi.css">
 
   <style>
     body {
       font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
+
+      /* 🎨 wavy 강도 조절용 변수 */
+      --wave-frequency: 0.015;   /* 작을수록 부드러움, 클수록 강하게 왜곡 */
+      --wave-scale: 12;          /* displacement 강도 (높을수록 더 찌그러짐) */
+
+      /* 필터 적용 */
+      filter: url(#wavyGrid);
     }
 
     /* title 스타일 */
-    h1.title {
+    .title {
       line-height: 1.1;
     }
 
@@ -30,12 +38,33 @@
 
 <body>
 
+<!-- SVG 필터 정의 -->
+<svg width="0" height="0">
+  <filter id="wavyGrid">
+
+    <!-- 🔥 baseFrequency를 CSS 변수로 제어 -->
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="var(--wave-frequency)"
+      numOctaves="3"
+      result="warp"
+    />
+
+    <!-- 🔥 scale도 CSS 변수로 조절 -->
+    <feDisplacementMap
+      in="SourceGraphic"
+      in2="warp"
+      scale="var(--wave-scale)"
+    />
+
+  </filter>
+</svg>
+
 <main class="card">
   <div class="subtitle">Experimental Doodle Space</div>
 
   <br>
 
-  <!-- 제목 (기본 wiggly, hover 시 회전) -->
   <div id="spinningTitle">
     <div class="title">
       Welcome to <br>
@@ -45,7 +74,6 @@
 
   <br><br>
 
-  <!-- 단어 애니메이션 대상 -->
   <h1 class="subtitle" id="wigglyText">
 Everything here goes<br>
 viddle-viddle.<br>
