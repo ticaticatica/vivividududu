@@ -30,6 +30,7 @@ body {
   align-items: center;*/
   padding: 40px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
+  left: 20%;
 }
 
 .card {
@@ -65,7 +66,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 80px;
+  gap: 100px;
   width: 100%;
   margin-top: 20px;
 }
