@@ -1,3 +1,4 @@
+
 /* -----------------------------
    OPTIONAL FIXED HORIZONTAL LINE
 ------------------------------ */
@@ -16,18 +17,21 @@
 ------------------------------ */
 body {
   min-height: 100vh;
-  display: block;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  padding: 20px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
 
 .card {
   background: rgba(255, 255, 255, 0.5);
-  padding: 10px;
-  max-width: none;
+  padding: 20px;
+  max-width: 1600px;
+  width: 90%;
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px); 
-} 
+  -webkit-backdrop-filter: blur(6px);
+}
 
 /* -----------------------------
    TOP TITLE
@@ -36,59 +40,57 @@ body {
   position: fixed;
   top: 10px;
   left: 2%;
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: 20px;
   font-weight: 100;
   font-style: italic;
-  line-height: 1.0;
+  line-height: 1.1;
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
-  z-index: 1001;
+  transform: translateX(0);
 }
 
-/* -----------------------------
-   TITLE + SUBTITLE 가로 배치
------------------------------- */
+/* ---------------------------------------
+   TITLE + SUBTITLE 가로 배치 컨테이너
+---------------------------------------- */
 .title-subtitle-wrap {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
+  /*justify-content: space-between;*/
+  /*align-items: flex-start;*/
+  left:20pt;
+  gap: 80px;
+  width: 100%;
+  margin-top: 100px;
 }
 
 /* -----------------------------
-   TITLE
+   TITLE ANIMATION (Wiggly + Spin)
 ------------------------------ */
-.title {
-  font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
-  font-weight: 900;
-  font-size: clamp(2.5em, 8vw, 4em);
-  font-style: italic;
-  line-height: 1;
-  text-align: center;
-  animation: wigglyTitle 2.4s infinite ease-in-out;
-  transform-origin: center;
-  margin-top: clamp(100px, 20vh, 250px);
-  margin-left: 5%;
-  margin-right: clamp(20px, 20%, 200px);
-  will-change: transform;
+@keyframes wigglyTitle {
+  0%   { transform: rotate(0deg) translateY(0); }
+  25%  { transform: rotate(1.4deg) translateY(-2px); }
+  50%  { transform: rotate(-1.4deg) translateY(3px); }
+  75%  { transform: rotate(1deg) translateY(-1px); }
+  100% { transform: rotate(0deg) translateY(0); }
 }
 
-/* wigglyTitle 애니메이션 정의 */
-@keyframes wigglyTitle {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  25% { transform: rotate(2deg) scale(1.02); }
-  50% { transform: rotate(-2deg) scale(0.98); }
-  75% { transform: rotate(1deg) scale(1.01); }
+.title {
+  font-family: "recursive-sans-csl-st-xblk", "spalla", "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: 4em;
+  font-style: italic;
+  line-height: 1;
+  animation: wigglyTitle 2.4s infinite ease-in-out;
+  transform-origin: center center; /* 회전 축 중앙 */
+  margin-left: 150px;
+  margin-top: 100px;
 }
 
 #spinningTitle {
   cursor: pointer;
-  user-select: none;
 }
 
-/* hover + JS spin-fast */
+/* hover + JS spin-fast 공통 */
 #spinningTitle:hover .title,
 .spin-fast {
   animation: spinFast 1s linear infinite !important;
@@ -97,49 +99,46 @@ body {
 
 @keyframes spinFast {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* -----------------------------
    SUBTITLE
 ------------------------------ */
 .subtitle {
-  font-size: clamp(18px, 4vw, 28px);
-  font-weight: 100;
-  line-height: 1.4;
+  font-size: 28px;
+  font-weight: 150;
+  line-height: 1.0;
   text-align: right;
-  margin-right: clamp(20px, 8vw, 90px);
-  margin-top: clamp(120px, 22vh, 350px);
-}
-
-/* 성능 최적화 */
-.subtitle .line,
-.subtitle .word {
-  will-change: transform;
+  margin-right: 90px;
+  margin-top: 100px;
 }
 
 /* -----------------------------
-   LINE WIGGLE
+   LINE WIGGLE (줄 단위 애니메이션)
 ------------------------------ */
+/* 줄 wiggle */
 .subtitle .line {
   display: inline-block;
   transform-origin: center center;
-  animation: lineWiggle 3s infinite ease-in-out;
+  animation: lineWiggle 3s  infinite ease-in-out;
 }
 
 @keyframes lineWiggle {
-  0%, 100% { transform: rotate(var(--line-tilt)) translateY(0px); }
-  25% { transform: rotate(calc(var(--line-tilt) + 15deg)) translateY(-20px); }
-  50% { transform: rotate(calc(var(--line-tilt) - 18deg)) translateY(15px); }
-  75% { transform: rotate(calc(var(--line-tilt) + 8deg)) translateY(-30px); }
+  0%   { transform: rotate(var(--line-tilt)) translateY(0px); }
+  25%  { transform: rotate(calc(var(--line-tilt) + 3deg)) translateY(-5px); }
+  50%  { transform: rotate(calc(var(--line-tilt) - 3deg)) translateY(6px); }
+  75%  { transform: rotate(calc(var(--line-tilt) + 1.5deg)) translateY(-4px); }
+  100% { transform: rotate(var(--line-tilt)) translateY(0px); }
 }
 
+/* hover → 줄 더 출렁이기 */
 .subtitle:hover .line {
   animation-duration: 1.4s;
 }
 
 /* -----------------------------
-   WORD WIGGLE
+   WORD WIGGLE (단어 개별 애니메이션)
 ------------------------------ */
 .subtitle .word {
   display: inline-block;
@@ -148,13 +147,14 @@ body {
 }
 
 @keyframes wordWiggle {
-  0% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-6px) rotate(2deg); }
-  50% { transform: translateY(8px) rotate(-3deg); }
-  75% { transform: translateY(-5px) rotate(1deg); }
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-6px) rotate(2deg); }
+  50%  { transform: translateY(8px) rotate(-3deg); }
+  75%  { transform: translateY(-5px) rotate(1deg); }
   100% { transform: translateY(0) rotate(0deg); }
 }
 
+/* hover → 단어 더 강하게 */
 .subtitle:hover .word {
   animation-duration: 1.5s;
 }
@@ -170,37 +170,4 @@ body {
   opacity: 0.5;
   font-size: 12px;
   pointer-events: none;
-  z-index: 999;
-}
-
-/* -----------------------------
-   반응형
------------------------------- */
-@media (max-width: 768px) {
-  .title-subtitle-wrap {
-    flex-direction: column;
-  }
-
-  .title {
-    margin-top: 120px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .subtitle {
-    text-align: left;
-    margin-top: 20px;
-    margin-right: 20px;
-  }
-}
-
-/* -----------------------------
-   접근성: 애니메이션 줄이기
------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  .title,
-  .subtitle .line,
-  .subtitle .word {
-    animation: none !important;
-  }
-}
+}  
