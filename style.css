@@ -20,15 +20,6 @@ body {
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.5);
-  padding: 20px;
-  max-width: none;
-  width: 100%
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
 /* -----------------------------
    TOP TITLE
 ------------------------------ */
@@ -121,13 +112,23 @@ body {
   animation: lineWiggle 3s ease-in-out infinite ;
 }
 
-@keyframes lineWiggle 
-  0%   { transform: rotate(var(--line-tilt)) translateY(0px); }
-  25%  { transform: rotate(calc(var(--line-tilt) + 30deg)) translateY(-35px); }
-  50%  { transform: rotate(calc(var(--line-tilt) - 45deg)) translateY(66px); }
-  75%  { transform: rotate(calc(var(--line-tilt) + 15deg)) translateY(-34px); }
-  100% { transform: rotate(var(--line-tilt)) translateY(0px); }
-
+@keyframes lineWiggle {
+  0%   { 
+    transform: translateY(0px); 
+  }
+  25%  { 
+    transform: translateY(-35px); 
+  }
+  50%  { 
+    transform: translateY(66px); 
+  }
+  75%  { 
+    transform: translateY(-35px); 
+  }
+  100% { 
+    transform: translateY(0px); 
+  }
+}
 /* -----------------------------
    FOOTER
 ------------------------------ */
