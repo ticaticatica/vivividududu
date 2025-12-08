@@ -50,7 +50,7 @@ body {
   align-items: center;
   gap: 4vh;
   width: 100%;
-  margin-top: 9vh;
+  margin-top: 5vh;
   text-align: center;
 }
 
@@ -85,12 +85,11 @@ body {
 }
 
 
-
 /* ---------------------------------------
    SUBTITLE (line wiggle independent)
 ---------------------------------------- */
 .subtitle {
-  font-size: clamp(1.2rem, 1vw, 1.2rem);
+  font-size: clamp(1.5rem, 1vw, 1.5rem);
   font-weight: 150;
   line-height: 1.0;
   display: flex;
@@ -99,12 +98,12 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
   text-align: right;
+  margin-top: 10%
 }
 
 
-
 /* Line wiggle uses ONLY translate for no conflict */
-@keyframes subtleWiggle {
+@keyframes idleWigglyTitle {
   0%   { transform: rotate(0deg) translateY(0); }
   25%  { transform: rotate(1.4deg) translateY(-2px); }
   50%  { transform: rotate(-1.4deg) translateY(3px); }
@@ -113,7 +112,7 @@ body {
 }
 
 .subtitle .line {
-  animation: subtleWiggle 3s ease-in-out infinite;
+  animation: idleWigglyTitle 2.5s ease-in-out infinite;
 }
 
 /* Hover spin */
@@ -140,19 +139,7 @@ body {
   65%  { transform: scale(0.95,1.05); }
   100% { transform: scale(1,1); }
 }
-}
 
-/* ---------------------------------------
-   OPTIONAL FIXED HORIZONTAL LINE
----------------------------------------- */
-.fixed-line {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  width: 100%;
-  border-top: 1px solid #000;
-  z-index: 50;
-}
 
 /* ---------------------------------------
    FOOTER
