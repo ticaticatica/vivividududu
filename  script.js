@@ -1,40 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ---------------------------------------------------
-     SUBTITLE: 줄 랜덤 기울기 + 단어 wiggle
-  --------------------------------------------------- */
+  /* -----------------------------
+     SUBTITLE: 줄 분석 + 단어 재구성
+  ------------------------------ */
   const text = document.getElementById("wigglyText");
 
   if (text) {
-    let cleanHTML = text.innerHTML
-      .replace(/\r?\n|\r/g, "")           // 개행 제거
-      .replace(/<br\s*\/?>/gi, "<br>")     // 다양한 <br> 정규화
-      .trim();
+    const raw = text.innerText;
+    const lines = raw.split(/\r?\n/).filter(l => l.trim() !== "");
 
-    const lines = cleanHTML.split("<br>").filter(line => line.trim() !== "");
+    const processed = lines.map(line => {
+      const angle = (Math.random() * 10 - 5).toFixed(2); // -5~+5도
+      const words = line.trim().split(/\s+/);
+      const wordHTML = words
+        .map(w => `<span class="word">${w}</span>`)
+        .join(" ");
 
-    const processed = lines
-      .map(line => {
-        const angle = (Math.random() * 10 - 5).toFixed(2); // -5 ~ +5deg
-        return `
-          <span class="line" style="--line-tilt:${angle}deg;">
-            ${line
-              .trim()
-              .split(/\s+/)
-              .map(word => `<span class="word">${word}</span>`)
-              .join(" ")}
-          </span>
-        `;
-      })
-      .join("<br>");
+      return `<span class="line" style="--line-tilt:${angle}deg;">${wordHTML}</span>`;
+    }).join("<br>");
 
     text.innerHTML = processed;
   }
 
-
-  /* ---------------------------------------------------
+  /* -----------------------------
      TITLE HOVER SPIN
-  --------------------------------------------------- */
+  ------------------------------ */
   const spinningTitle = document.getElementById("spinningTitle");
   const titleElement = spinningTitle?.querySelector(".title");
 
@@ -48,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
   /* ---------------------------------------------------
