@@ -113,8 +113,14 @@ h1.subtitle {
   font-size: 30px;
 }
 
+.special {
+  display:inline-block;
+  transform: rotate(-4deg);
+}
+
 .word {
   display: inline-block;
+  margin-left: 20px; /* 원하는 만큼 */
   position: relative;
   --tilt: rotate(0deg);
   --shiftX: 2px;
