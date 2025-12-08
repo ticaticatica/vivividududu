@@ -122,12 +122,12 @@ body {
    LINE WIGGLE (줄 전체)
 ------------------------------ */
 /* 기본 wiggle */
-.subtitle.line {
+/* LINE WIGGLE */
+.subtitle .line {
   display: inline-block;
   transform-origin: center;
   margin-bottom: 10px;
   animation: lineWiggle 2.2s ease-in-out infinite;
-  transition: animation 0.2s ease;
 }
 
 @keyframes lineWiggle {
@@ -155,10 +155,10 @@ body {
    WORD WIGGLE (단어 개별)
 ------------------------------ */
 /* 기본 단어 움직임 */
-.subtitle.word {
+/* WORD WIGGLE */
+.subtitle .word {
   display: inline-block;
   animation: wordFloat 2.6s ease-in-out infinite;
-  transition: animation 0.2s ease;
 }
 
 @keyframes wordFloat {
