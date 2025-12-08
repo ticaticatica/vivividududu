@@ -18,7 +18,6 @@
 body {
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
   display: flex;
-  flex-direction: column;
 }
 
 
@@ -43,7 +42,6 @@ body {
 ---------------------------------------- */
 .title-subtitle-wrap {
   display: flex;
-  flex-direction: column;
   gap: 4vh;
   width: 100%;
   text-align: center;
