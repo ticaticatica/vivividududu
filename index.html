@@ -29,7 +29,17 @@
 
   <main class="card">
 
-    <!-- 메인 타이틀 (wiggly + hover spin) -->
+      <!-- 상단 고정 제목 -->
+  <div class="top-title">
+    <div>Doodle</div>
+    <div>Space</div>
+    <div>Laboratory</div>
+  </div>
+
+    <!-- 🔥 타이틀 + 서브타이틀을 한 줄에 배치할 flex 컨테이너 -->
+  <div class="title-subtitle-wrap">
+
+ <!-- 왼쪽: 타이틀 -->
     <div id="spinningTitle">
       <div class="title">
         Welcome to <br>
@@ -37,15 +47,18 @@
       </div>
     </div>
 
-    <!-- 서브타이틀 (JS가 자동으로 span 처리) -->
+      <!-- 오른쪽: 서브타이틀 -->
     <h1 class="subtitle" id="wigglyText">
       Everything here goes<br>
       viddle-viddle.<br>
-      A wiggly world<br>
+      <span class="special">A wiggly world</span><br>
       for wiggly souls.
     </h1>
 
-  </main>
+
+  </div>
+
+</main>
 
   <!-- 푸터 (화면 하단 중앙) -->
   <div class="footer">

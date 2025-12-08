@@ -35,10 +35,22 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 40px 40px;
-  max-width: 700px;
+  max-width: 800px;
   width: 100%;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+}
+
+/* ---------------------------------------
+   TITLE + SUBTITLE 가로 배치 컨테이너
+---------------------------------------- */
+.title-subtitle-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  margin-top: 50px;
 }
 
 /* -----------------------------
@@ -47,20 +59,20 @@ body {
 .top-title {
   position: fixed;
   top: 10px;
-  left: 50%;
+  left: 20%;
   transform: translateX(-50%);
   font-size: 22px;
   font-weight: 200;
   font-style: italic;
+  line-height: 1;
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
 }
 
 /* -----------------------------
-   MAIN TITLE
+   MAIN TITLE (Wiggly + Spin)
 ------------------------------ */
-
 @keyframes wigglyTitle {
   0%   { transform: rotate(0deg) translateY(0); }
   25%  { transform: rotate(1.4deg) translateY(-2px); }
@@ -75,13 +87,11 @@ body {
   font-size: 4em;
   font-style: italic;
   line-height: 1;
-  display: inline-block;
   animation: wigglyTitle 2.4s infinite ease-in-out;
 }
 
 #spinningTitle {
   cursor: pointer;
-  margin-bottom: 55px; /* 제목과 내용 간 간격 확실히 */
 }
 
 #spinningTitle:hover .title,
@@ -95,54 +105,50 @@ body {
 }
 
 /* -----------------------------
-   SUBTITLE (줄 wiggle + 단어 wiggle)
+   SUBTITLE
 ------------------------------ */
-
-h1.subtitle {
-  text-align: center;
+.subtitle {
+  text-align: right;
   font-weight: 200;
   font-size: 30px;
   line-height: 1.2;
+  margin: 0;
+  flex: 1;
 }
 
+/* -----------------------------
+   LINE WIGGLE (줄 전체)
+------------------------------ */
 .line {
   display: block;
-  transform-origin: left center;
-  animation: lineWiggle 3.2s infinite ease-in-out;
-  margin-bottom: 8px;
+  transform-origin: left top;
+  margin-bottom: 10px;
+  animation: lineWiggle 3s ease-in-out infinite;
 }
-
-.line:nth-child(odd) { animation-delay: 0.1s; }
-.line:nth-child(even){ animation-delay: 0.25s; }
 
 @keyframes lineWiggle {
   0%   { transform: rotate(var(--line-tilt)); }
-  25%  { transform: rotate(calc(var(--line-tilt) + 0.5deg)); }
-  50%  { transform: rotate(calc(var(--line-tilt) - 0.5deg)); }
-  75%  { transform: rotate(calc(var(--line-tilt) + 0.3deg)); }
+  50%  { transform: rotate(calc(var(--line-tilt) + 1.2deg)); }
   100% { transform: rotate(var(--line-tilt)); }
 }
 
+/* -----------------------------
+   WORD WIGGLE (단어 개별)
+------------------------------ */
 .word {
   display: inline-block;
   position: relative;
+  animation: floatWiggle 2.4s ease-in-out infinite;
   --tilt: rotate(0deg);
   --shiftX: 0px;
-  animation: floatWiggle 3s infinite ease-in-out;
-  margin: 0 4px;
 }
 
-.word:nth-child(odd)  { --tilt: rotate(-6deg); --shiftX: -3px; }
-.word:nth-child(even) { --tilt: rotate(6deg);  --shiftX: 3px;  }
-.word:nth-child(3n)   { animation-delay: 0.15s; }
-.word:nth-child(4n)   { animation-delay: 0.32s; }
-
 @keyframes floatWiggle {
-  0%   { transform: var(--tilt) translate(var(--shiftX), 0px); }
-  25%  { transform: var(--tilt) translate(var(--shiftX), -4px); }
-  50%  { transform: var(--tilt) translate(var(--shiftX), 3px); }
-  75%  { transform: var(--tilt) translate(var(--shiftX), -2px); }
-  100% { transform: var(--tilt) translate(var(--shiftX), 0px); }
+  0%   { transform: var(--tilt) translate(var(--shiftX), 0); }
+  25%  { transform: var(--tilt) translate(var(--shiftX), -6px); }
+  50%  { transform: var(--tilt) translate(var(--shiftX), 4px); }
+  75%  { transform: var(--tilt) translate(var(--shiftX), -3px); }
+  100% { transform: var(--tilt) translate(var(--shiftX), 0); }
 }
 
 /* -----------------------------
