@@ -32,7 +32,7 @@ body {
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 
   /* 🔥 기존 직선 그리드 제거 */
-  background: transparent;
+  /*background: transparent;*/
 }
 
 .card {
@@ -57,6 +57,7 @@ body {
   font-size: 22px;
   letter-spacing: 1px;
   font-style: italic;
+  text-align: center;
 
   opacity: 0.8;
   z-index: 10;        /* 캔버스 위로 올라오도록 */
@@ -117,7 +118,7 @@ h1.subtitle {
   display: inline-block;
   position: relative;
   --tilt: rotate(0deg);
-  --shiftX: 0px;
+  --shiftX: 2px;
   animation: floatWiggle 3s infinite ease-in-out;
 }
 
@@ -136,10 +137,10 @@ h1.subtitle {
 
 .footer {
   position: fixed;
-  bottom: 20px;  /* 화면 아래에서 20px */
+  bottom: 10px;  /* 화면 아래에서 20px */
   left: 50%;  /* 화면의 가운데 */
   transform: translateX(-50%); /* 자기 너비의 절반만 왼쪽으로 당겨서 정확한 중앙 */
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.5;
   pointer-events: none;
 }
