@@ -43,7 +43,7 @@ body {
   font-size: 20px;
   font-weight: 100;
   font-style: italic;
-  line-height: 1.1;
+  line-height: 1.0;
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
@@ -58,7 +58,7 @@ body {
   justify-content: flex-start;  /* 왼쪽 정렬 */
   align-items: flex-start;
   gap: 300px;
-  margin-top: 400px;
+  margin-top: 300px;
 }
 
 /* -----------------------------
@@ -80,7 +80,7 @@ body {
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
-  margin-top: 400px;
+  margin-top: 350px;
   margin-left: 0;
 }
 
