@@ -11,23 +11,36 @@
   <!-- Adobe Fonts (Recursive Sans Casual Static Regular) -->
   <link rel="stylesheet" href="https://use.typekit.net/urt5vwi.css">
 
-  <style>
-    body {
-      font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
-    }
+<style>
+  body {
+    font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
+  }
 
-    /* subtitle은 Recursive Sans Casual Static Regular 유지 */
-    .subtitle {
-      font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
-    }
+  h1.subtitle {
+    font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
+    line-height: 1.1;
+    font-weight: 300;
+    text-align: right;
+    animation: wiggle 2.5s infinite ease-in-out;
+  }
 
-    /* title만 BC Ludva Bold Slant 적용 */
+  @keyframes wiggle {
+    0%   { transform: rotate(0deg); }
+    15%  { transform: rotate(1.5deg); }
+    30%  { transform: rotate(-1.5deg); }
+    45%  { transform: rotate(1deg); }
+    60%  { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+  }
+
   .title {
-      font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
-      font-weight: 900;
-      font-size: 4em;
-    }
-  </style>
+    font-family: "recursive-sans-csl-st-xblk", "Noto Sans KR", sans-serif;
+    font-weight: 900;
+    font-size: 4em;
+  }
+</style>
+
+
 </head>
 
 <body>
