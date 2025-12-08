@@ -1,10 +1,25 @@
+console.log("Script loaded!");
+
 // 설정값
 const CONFIG = {
   TILT_RANGE: 10,
   LINE_DELAY: 0.2,
-  WORD_DELAY: 0.1,
-  DEBUG: false
+  WORD_DELAY: 0.1
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM loaded!");
+  
+  const text = document.getElementById("wigglyText");
+  console.log("Found wigglyText:", text); // null이면 문제!
+  
+  if (!text) {
+    console.error("❌ #wigglyText element not found!");
+    return;
+  }
+
+  const raw = text.innerText || text.textContent;
+  console.log("Raw text:", raw);
 
 document.addEventListener("DOMContentLoaded", () => {
 
