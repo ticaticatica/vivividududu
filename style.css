@@ -56,7 +56,6 @@ body {
   display: block;
   justify-content: left;
   align-items: left;
-  left:0;
   gap: 300px;
   width: 100%;
   margin-top: 300px;
@@ -81,10 +80,11 @@ body {
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
-  margin-left: 20%;
+  margin-left: 5%;
   margin-right: 30%;
   margin-top: 300px;
   text-align: center;
+  left:2%;
 }
 
 #spinningTitle {
