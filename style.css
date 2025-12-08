@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; /* 기존: center → 텍스트 위로 이동 */
-  padding-top: 8vh;
+  padding-top: 1vh;
 }
 
 
@@ -51,7 +51,7 @@ body {
   gap: 4vh;
   width: 100%;
   text-align: center;
-  margin-top: 1vh;  /* 기존 15vh → 10vh 같은 식으로 조정 */
+  margin-top: 0;  /* 기존 15vh → 10vh 같은 식으로 조정 */
 }
 
 /* ---------------------------------------
@@ -102,7 +102,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
   text-align: right;
-  margin-top: 10%
+  margin-top: 2vh
 }
 
 
