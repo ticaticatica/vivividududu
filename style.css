@@ -20,7 +20,7 @@ body {
   display: block;   /* flex 제거 */
   /*justify-content: center;*/
   /*align-items: center;*/
-  padding: 20px 20px;
+  padding: 40px 20px;
   font-family: "Recursive Sans Casual Static", "Noto Sans KR", sans-serif;
 }
 
