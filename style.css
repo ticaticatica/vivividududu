@@ -35,7 +35,7 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   padding: 40px 40px;
-  max-width: 1100px;
+  max-width: 1000px;
   width: 100%;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -70,6 +70,8 @@ body {
   gap: 60px;
   width: 100%;
   margin-top: 20px;
+  margin-right: 80px;
+  margin-left: 80px;
 }
 
 /* -----------------------------
