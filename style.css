@@ -140,10 +140,10 @@ h1.subtitle {
 
 .footer {
   position: fixed;
-  bottom: 1px;  /* 화면 아래에서 20px */
+  bottom: none;  /* 화면 아래에서 20px */
   left: 50%;  /* 화면의 가운데 */
   transform: translateX(-50%); /* 자기 너비의 절반만 왼쪽으로 당겨서 정확한 중앙 */
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.5;
   pointer-events: none;
 }
