@@ -76,6 +76,7 @@ body {
   font-size: 4em;
   font-style: italic;
   line-height: 1;
+  text-align: center;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
   margin-top: 300px;
