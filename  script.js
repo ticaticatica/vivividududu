@@ -1,38 +1,40 @@
 /* ---------------------------------------------------
    DOM READY – 모든 초기 기능 통합
 --------------------------------------------------- */
-
 document.addEventListener("DOMContentLoaded", () => {
-  /* ---------------------------------------------------
-     WORD WRAP FOR SUBTITLE (고정 버전)
-  --------------------------------------------------- */
-
   const text = document.getElementById("wigglyText");
 
   if (text) {
-    // 1) <br> 전후 공백 제거 + 개행 제거
+    // <br> 통일 + 개행 정리
     let cleanHTML = text.innerHTML
-      .replace(/\r?\n|\r/g, "")          // 모든 개행 제거
-      .replace(/\s*<br>\s*/g, "<br>")    // br 앞뒤 공백 제거
+      .replace(/\r?\n|\r/g, "")
+      .replace(/<br\s*\/?>/gi, "<br>")
       .trim();
 
-    // 2) <br> 기준 줄 분리
     const lines = cleanHTML.split("<br>");
 
-    // 3) 각 단어 span화
+    // ⭐ 각 줄을 랜덤 기울기로 감싸고
+    // ⭐ 단어 단위 wiggle span 적용
     const processed = lines
-      .map(line =>
-        line
-          .trim()
-          .split(/\s+/)
-          .map(word => `<span class="word">${word}</span>`)
-          .join(" ")
-      )
-      .join("<br>");
+      .map(line => {
+        const angle = (Math.random() * 8 - 4).toFixed(2);  // -4deg ~ +4deg 랜덤
+        return `
+          <span class="line" style="display:block; transform: rotate(${angle}deg);">
+            ${line
+              .trim()
+              .split(/\s+/)
+              .map(word => `<span class="word">${word}</span>`)
+              .join(" ")
+            }
+          </span>
+        `;
+      })
+      .join("");
 
-    // 4) HTML 갱신
     text.innerHTML = processed;
   }
+});
+
 
   /* ---------------------------------------------------
      TITLE HOVER SPIN (회전 기능)

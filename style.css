@@ -85,7 +85,7 @@ body {
 #spinningTitle {
   display: inline-block;
   cursor: pointer;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 /* hover → spin */
@@ -151,4 +151,10 @@ h1.subtitle {
   font-size: 12px;
   opacity: 0.5;
   pointer-events: none;
+}
+
+.line {
+  display: block;
+  margin-bottom: 6px; /* 줄 간격 */
+  transform-origin: left center; /* 회전 기준점 */
 }
