@@ -48,7 +48,7 @@ body {
 .top-title {
   position: fixed;
   top: 10px;
-  left: 20%;
+  left: 5%;
   transform: translateX(-50%);
   font-size: 20px;
   font-weight: 100;
@@ -57,7 +57,7 @@ body {
   opacity: 0.8;
   pointer-events: none;
   letter-spacing: 1px;
-  margin-left: 10pt;
+  margin-left: auto;
 }
 
 /* ---------------------------------------
