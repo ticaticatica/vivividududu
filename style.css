@@ -48,7 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4vh;
+  gap: 5vh;
   width: 100%;
   margin-top: 11vh;
   text-align: center;
@@ -90,11 +90,11 @@ body {
    SUBTITLE (line wiggle independent)
 ---------------------------------------- */
 .subtitle {
-  font-size: clamp(1.2rem, 1vw, 1.2rem);
+  font-size: clamp(1.0rem, 1vw, 1.0rem);
   font-weight: 150;
   line-height: 1.0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   gap: 8px;
   cursor: pointer;
   transition: transform 0.3s ease;
