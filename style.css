@@ -89,7 +89,7 @@ body {
   line-height: 1;
   animation: wigglyTitle 2.4s infinite ease-in-out;
   transform-origin: center center; /* 회전 축 중앙 */
-  margin-left: 100px;
+  margin-left: 90px;
 }
 
 #spinningTitle {
@@ -116,7 +116,7 @@ body {
   font-weight: 200;
   font-size: 30px;
   line-height: 1.2;
-  margin-right: 150px;
+  margin-right: 200px;
   flex: 1;
 }
 
