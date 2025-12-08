@@ -5,7 +5,7 @@
 ------------------------------ */
 .fixed-line-strong {
   position: fixed;
-  top: -1;
+  top: 0;
   left: 0;
   width: 100%;
   border: 0;
@@ -19,7 +19,7 @@
 ------------------------------ */
 .fixed-line {
   position: fixed;
-  top: 50px;
+  top: 60px;
   left: 0;
   width: 100%; /* 전체 가로선 보이도록 */
   border: 0;
@@ -42,7 +42,7 @@ body {
 ------------------------------ */
 .top-title {
   position: fixed;
-  top: 25px;
+  top: 30px;
   left: 2vw;
   font-size: 1.1rem;
   font-weight: 100;
