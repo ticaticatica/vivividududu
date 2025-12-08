@@ -137,9 +137,9 @@ h1.subtitle {
 .word:nth-child(4n)   { animation-delay: 0.33s; }
 
 @keyframes floatWiggle {
-  0%   { transform: var(--tilt) translate(var(--shiftX), 0); }
-  25%  { transform: var(--tilt) translate(var(--shiftX), -10px); }
-  50%  { transform: var(--tilt) translate(var(--shiftX), 30px); }
+  0%   { transform: var(--tilt) translate(var(--shiftX), 10); }
+  25%  { transform: var(--tilt) translate(var(--shiftX), -20px); }
+  50%  { transform: var(--tilt) translate(var(--shiftX), 40px); }
   75%  { transform: var(--tilt) translate(var(--shiftX), -20px); }
   100% { transform: var(--tilt) translate(var(--shiftX), 0); }
 }
