@@ -62,7 +62,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20vh;       /* 필요하면 15~30vh로 조절 */
+  gap: 15vh;       /* 필요하면 15~30vh로 조절 */
   margin-top: 10vh;
   width: 100%;
 }
@@ -105,9 +105,9 @@ body {
    SUBTITLE (line wiggle independent)
 ---------------------------------------- */
 .subtitle {
-  font-size: clamp(1.8rem, 1.4vw, 1.8rem);
+  font-size: clamp(1.5rem, 1.4vw, 1.5rem);
   font-weight: 90;
-  line-height: 1.3;
+  line-height: 1.0;
   display: flex;
   cursor: pointer;
   transition: transform 0.3s ease;
