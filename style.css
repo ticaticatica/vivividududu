@@ -170,9 +170,8 @@ body {
 ---------------------------------------- */
 .video-wrapper {
   position: fixed;
-  left: 0;
+  right: 0; 
   bottom: 0;
-
   width: 100%;
   height: 45vh;
 
@@ -183,6 +182,10 @@ body {
 }
 
 .video-wrapper video {
+  position: absolute;   
+  right: 0;              /* ★ 영상 오른쪽 끝이 화면 오른쪽 끝과 일치 */
+  bottom: 0;             /* ★ 바닥 기준 맞춤 */
+ 
   width: 70%;
   height: 70%;
   object-fit: cover;
