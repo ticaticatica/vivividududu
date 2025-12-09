@@ -62,8 +62,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1vh;       /* 필요하면 15~30vh로 조절 */
-  margin-top: 10vh;
+  gap: 1.5vh;       /* 필요하면 15~30vh로 조절 */
+  margin-top: 5vh;
   width: 100%;
 }
 
