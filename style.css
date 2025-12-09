@@ -62,7 +62,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15vh;       /* 필요하면 15~30vh로 조절 */
+  gap: 12vh;       /* 필요하면 15~30vh로 조절 */
   margin-top: 10vh;
   width: 100%;
 }
