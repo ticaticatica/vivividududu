@@ -174,20 +174,41 @@ body {
   bottom: 0;
   width: 100%;
   height: 45vh;
-
-  overflow: visible;
-  z-index:9999;
+  overflow: hidden;
+  z-index: 9999;
   pointer-events: none;
   background: transparent;
 }
 
-.video-wrapper video {
+/* 메인 영상 - 오른쪽 */
+.video-main {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 타일처럼 왼쪽 반복 */
+.video-tile {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+
+/* .video-wrapper video {
   position: absolute;   
   right: 0;              /* ★ 영상 오른쪽 끝이 화면 오른쪽 끝과 일치 */
-  bottom: 0;             /* ★ 바닥 기준 맞춤 */
+  /* bottom: 0;             /* ★ 바닥 기준 맞춤 */
  
-  width: 70%;
+  /* width: 70%;
   height: 70%;
   object-fit: cover;
   transform-origin: bottom center;
-}
+} */ 
