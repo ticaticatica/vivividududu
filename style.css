@@ -186,7 +186,7 @@ body {
   right: 0;              /* ★ 영상 오른쪽 끝이 화면 오른쪽 끝과 일치 */
   bottom: 0;             /* ★ 바닥 기준 맞춤 */
  
-  width: 100%;
+  width: 90%;
   height: 70%;
   object-fit: cover;
   transform-origin: bottom center;
