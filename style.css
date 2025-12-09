@@ -179,7 +179,6 @@ body {
   overflow: visible;
   z-index:9999;
   pointer-events: none;
-  background: transparent;
 }
 
 .video-wrapper video {
