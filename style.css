@@ -174,7 +174,7 @@ body {
   bottom: 0;
 
   width: 100%;
-  height: 30vh;
+  height: 40vh;
 
   overflow: visible;
   z-index:9999;
@@ -183,7 +183,7 @@ body {
 }
 
 .video-wrapper video {
-  width: 100%;
+  width: 90%;
   height: 70%;
   object-fit: cover;
   transform-origin: bottom center;
