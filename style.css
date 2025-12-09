@@ -62,7 +62,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 200vh;
+  gap: 300vh;
   width: 100%;
   text-align: center;
 
@@ -181,9 +181,9 @@ body {
   height: 30vh;
 
   overflow: hidden;
-  z-index: 3000;    /* wrapper는 높은 레벨 */
+  z-index: 9999;    /* wrapper는 높은 레벨 */
   pointer-events: none;
-  background: transparent;   /* ★ white 제거!! */
+   /* ★ white 제거!! */
 }
 
 .video-wrapper video {
