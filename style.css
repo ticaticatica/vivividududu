@@ -181,13 +181,14 @@ body {
   height: 30vh;
 
   overflow: hidden;
-  z-index: 3000;
+  z-index: 3000;    /* wrapper는 높은 레벨 */
   pointer-events: none;
-  background: white;
-
+  background: transparent;   /* ★ white 제거!! */
 }
 
 .video-wrapper video {
+  position: relative;   /* ★ 중요 */
+  z-index: 4000;        /* wrapper보다 위 */
   width: 100%;
   height: 100%;
   object-fit: cover;
