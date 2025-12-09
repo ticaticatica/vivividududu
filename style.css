@@ -62,7 +62,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 900vh;
+  gap: 50vh;
   width: 100%;
   text-align: center;
 
@@ -175,22 +175,22 @@ body {
   left: 0;
   bottom: 0;
 
-  width: 90%;
+  width: 100%;
   height: 30vh;
 
-  overflow: hidden;
-  z-index: 9999;    /* wrapper는 높은 레벨 */
+  overflow: visible;   /* ★ wiggle 되어도 영상이 잘리지 않음 */
+  z-index: -1;         /* 텍스트 위로 올라오지 않게 선택적으로 조절 */
   pointer-events: none;
-   /* ★ white 제거!! */
+  background: transparent;
 }
 
 .video-wrapper video {
-  position: relative;   /* ★ 중요 */
-  z-index: 4000;        /* wrapper보다 위 */
-  width: 90%;
-  height: 90%;
+  position: relative;
+  z-index: 0;
+  width: 100%;         /* ★ 화면 전체 너비로 꽉 채움 */
+  height: 100%;
   object-fit: cover;
+  transform-origin: bottom center;  /* wiggle 시 머리 잘림 방지 */
 
   animation: videoWiggle 12s ease-in-out infinite;
-  transform-origin: center;
 }
