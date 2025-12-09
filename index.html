@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>My Grid Page</title>
+  <title>Viddle Village</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
@@ -12,15 +11,18 @@
   <style>
     body {
       font-family: "recursive-sans-casual-static", "Noto Sans KR", sans-serif;
+      margin: 0;
+      padding: 0;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 곡선 애니메이션 grid 캔버스 -->
+  <!-- 배경 wavy 애니메이션 -->
   <canvas id="wavyCanvas"></canvas>
 
+  <!-- 최상단 굵은 라인 -->
   <hr class="fixed-line-strong">
 
   <!-- 상단 제목 -->
@@ -28,45 +30,49 @@
     Doodle
   </div>
 
-  <!-- 검은 얇은 라인 -->
+  <!-- 얇은 가로 라인 -->
   <hr class="fixed-line">
-  
-  <!-- 타이틀 회전 영역 -->
-  <div id="spinningTitle">
-    <div class="title">
-      Welcome to <br>
-      Viddle Village
-    </div>
-  </div>
 
+
+  <!-- -----------------------------------
+       TITLE + SUBTITLE WRAP (중요!!)
+       gap이 여기에서 정확히 적용됨
+  ------------------------------------- -->
   <div class="title-subtitle-wrap">
-  <div id="spinningTitle">
-    <div class="title">
-      Welcome to <br>
-      Viddle Village
+
+    <!-- 타이틀 -->
+    <div id="spinningTitle">
+      <div class="title">
+        Welcome to <br>
+        Viddle Village
+      </div>
     </div>
+
+    <!-- 서브타이틀 -->
+    <h1 class="subtitle" id="lineWiggle">
+      Everything here goes viddle-viddle-viddle<br><br>
+      A wiggly world for<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;⌑ wiggly souls ⌑
+    </h1>
+
   </div>
+  <!-- END title-subtitle-wrap -->
 
-  <!-- 서브 타이틀 (JS가 재구성함) -->
-<h1 class="subtitle" id="lineWiggle">
-  Everything here goes viddle-viddle-viddle<br> 
-  <br>
-  A wiggly world for <br>
- &nbsp;  &nbsp; &nbsp; &nbsp;⌑ wiggly souls ⌑
-</h1>
 
-  <!-- 푸터 -->
+  <!-- Footer -->
   <div class="footer">
     © 2025 viddlevillage
   </div>
 
- <!-- video bg -->
+
+  <!-- 영상 배경 -->
   <div class="video-wrapper">
-  <video src="./Comp 1.mp4" autoplay loop muted playsinline></video>
-</div>
+    <video src="./Comp 1.mp4" autoplay loop muted playsinline></video>
+  </div>
 
 
   <script src="script.js"></script>
+
 </body>
 </html>
 

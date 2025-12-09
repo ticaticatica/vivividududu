@@ -62,11 +62,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50vh;
+  gap: 20vh;       /* 필요하면 15~30vh로 조절 */
+  margin-top: 10vh;
   width: 100%;
-  text-align: center;
-
-  margin-top: 10vh; /* 완벽한 sweet spot */
 }
 
 /* ---------------------------------------
@@ -178,19 +176,15 @@ body {
   width: 100%;
   height: 30vh;
 
-  overflow: visible;   /* ★ wiggle 되어도 영상이 잘리지 않음 */
-  z-index: -1;         /* 텍스트 위로 올라오지 않게 선택적으로 조절 */
+  overflow: visible;
+  z-index: 10;
   pointer-events: none;
   background: transparent;
 }
 
 .video-wrapper video {
-  position: relative;
-  z-index: 0;
-  width: 100%;         /* ★ 화면 전체 너비로 꽉 채움 */
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  transform-origin: bottom center;  /* wiggle 시 머리 잘림 방지 */
-
-  animation: videoWiggle 12s ease-in-out infinite;
+  transform-origin: bottom center;
 }
